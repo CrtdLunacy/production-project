@@ -1,0 +1,9 @@
+{
+  "extends": "stylelint-config-standard",
+  "customSyntax": "postcss-less",
+  "rules": {
+    "indentation": [4],
+    "selector-class-pattern": null,
+    "import-notation": "string"
+  }
+}
