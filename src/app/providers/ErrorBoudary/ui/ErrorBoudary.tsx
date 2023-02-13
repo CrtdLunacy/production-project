@@ -1,6 +1,5 @@
 // eslint-disable-next-line no-undef
 import React, { ErrorInfo, ReactNode, Suspense } from 'react';
-import { withTranslation } from 'react-i18next';
 import { PageError } from 'widgets/PageError';
 
 interface ErrorBoudaryProps {
@@ -11,7 +10,7 @@ interface ErrorBoundaryState {
   hasError: boolean;
 }
 
-class ErrorBoundary
+export class ErrorBoundary
     extends React.Component<ErrorBoudaryProps, ErrorBoundaryState> {
     constructor(props: ErrorBoudaryProps) {
         super(props);

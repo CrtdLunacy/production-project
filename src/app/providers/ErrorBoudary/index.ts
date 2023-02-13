@@ -1,3 +1,3 @@
-import ErrorBoundary from './ui/ErrorBoudary';
+import { ErrorBoundary } from './ui/ErrorBoudary';
 
 export { ErrorBoundary };
