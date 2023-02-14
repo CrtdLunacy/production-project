@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import LangSwitcher from 'widgets/LangSwitcher/ui/LangSwitcher';
 import styles from './SideBar.module.scss';
-import Button from '../../../../shared/ui/Button/Button ';
+import Button from '../../../../shared/ui/Button/Button';
 
 interface SideBarProps {
   className?: string
