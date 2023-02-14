@@ -28,6 +28,5 @@ export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPlu
             }),
         );
     }
-
     return plugins;
 }
