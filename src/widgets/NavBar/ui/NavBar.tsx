@@ -26,12 +26,8 @@ const NavBar = ({ className }: NavbarProps) => {
             >
                 {t('Войти')}
             </Button>
-            {/* <button onClick={() => setIsOpen(true)}>click</button> */}
             <Modal isOpen={isAuthModal} onClose={onToggleModal}>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                A aliquid consequatur dolore eligendi eum fugit inventore ipsum
-                nesciunt nulla perferendis possimus quasi ratione rem repudiandae
-                sed sit totam voluptas, voluptatum!s
+                {t('Lorem ipsum dolor sit amet, consectetur adipisicing elit.')}
             </Modal>
         </div>
     );
