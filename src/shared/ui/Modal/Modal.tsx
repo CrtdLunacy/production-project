@@ -4,6 +4,7 @@ import {
     MouseEvent, ReactNode, useCallback, useEffect, useRef, useState,
 } from 'react';
 import Portal from 'shared/ui/Portal/Portal';
+import { useTheme } from 'app/providers/ThemeProvider';
 import styles from './Modal.module.scss';
 
 interface ModalProps {
@@ -22,6 +23,7 @@ const Modal = (props: ModalProps) => {
 
     const [isClosing, setIsClosing] = useState(false);
     const timeRef = useRef<ReturnType<typeof setTimeout>>();
+    const { theme } = useTheme();
 
     const mods: Record<string, boolean> = {
         [styles.opened]: isOpen,
