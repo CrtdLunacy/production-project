@@ -8,5 +8,8 @@
   "Страница не найдена": "Page not found",
   "Ошибка": "An unexpected error has occurred",
   "Обновить страницу": "Refresh page",
-  "Переключить": "Toggle"
+  "Переключить": "Toggle",
+  "Войти": "Sign in",
+  "Введите имя пользователя": "Username",
+  "Введите пароль": "Password"
 }

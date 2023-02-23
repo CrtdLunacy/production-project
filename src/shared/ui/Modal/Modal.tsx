@@ -1,6 +1,5 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import {
-    KeyboardEvent,
     MouseEvent, ReactNode, useCallback, useEffect, useRef, useState,
 } from 'react';
 import Portal from 'shared/ui/Portal/Portal';
@@ -22,7 +21,7 @@ const Modal = (props: ModalProps) => {
     } = props;
 
     const [isClosing, setIsClosing] = useState(false);
-    const timeRef = useRef<ReturnType<typeof setTimeout>>();
+    const timeRef = useRef<ReturnType<typeof setTimeout>>(null);
     const { theme } = useTheme();
 
     const mods: Record<string, boolean> = {
@@ -59,6 +58,10 @@ const Modal = (props: ModalProps) => {
     const onContentClick = (e: MouseEvent) => {
         e.stopPropagation();
     };
+
+    if (!isOpen) {
+        return null;
+    }
 
     return (
         <Portal>
