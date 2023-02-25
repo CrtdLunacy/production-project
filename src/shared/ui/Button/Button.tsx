@@ -30,6 +30,7 @@ const Button: FC<ButtonProps> = (props) => {
         theme,
         square,
         size = ButtonSize.M,
+        disabled,
         ...otherProps
     } = props;
 
@@ -37,12 +38,14 @@ const Button: FC<ButtonProps> = (props) => {
         [styles[theme]]: true,
         [styles.square]: square,
         [styles[size]]: true,
+        [styles.disabled]: disabled,
     };
 
     return (
         <button
             type="button"
             className={classNames(styles.Button, mods, [className, styles[theme]])}
+            disabled={disabled}
             {...otherProps}
         >
             {children}

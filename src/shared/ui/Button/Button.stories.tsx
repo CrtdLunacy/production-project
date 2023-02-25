@@ -20,6 +20,12 @@ Primary.args = {
 };
 Primary.decorators = [ThemeDecorator(Theme.DARK)];
 
+export const Disabled = Template.bind({});
+Disabled.args = {
+    children: 'Text',
+    disabled: true,
+};
+
 export const Clear = Template.bind({});
 Clear.args = {
     children: 'Text',

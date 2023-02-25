@@ -9,7 +9,10 @@
   "Ошибка": "An unexpected error has occurred",
   "Обновить страницу": "Refresh page",
   "Переключить": "Toggle",
-  "Войти": "Sign in",
+  "Войти": "Log in",
+  "Выйти": "Log out",
   "Введите имя пользователя": "Username",
-  "Введите пароль": "Password"
+  "Введите пароль": "Password",
+  "Форма авторизации": "Authorization form",
+  "Ошибка авторизации": "You have entered incorrect login details"
 }
