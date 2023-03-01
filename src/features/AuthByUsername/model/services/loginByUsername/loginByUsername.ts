@@ -23,7 +23,7 @@ export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps>(
 
             return response.data;
         } catch (e) {
-            return thunkAPI.rejectWithValue(i18next.t('Ошибка авторизации'));
+            return thunkAPI.rejectWithValue('Authorization Error');
         }
     },
 );
