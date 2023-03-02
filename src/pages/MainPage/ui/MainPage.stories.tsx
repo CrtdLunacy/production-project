@@ -22,15 +22,9 @@ export const Primary = Template.bind({});
 Primary.args = {
 };
 
-Primary.decorators = [StoreDecorator({
-    user: {},
-})];
+Primary.decorators = [StoreDecorator({})];
 
 export const Secondary = Template.bind({});
 Secondary.args = {
 };
-Secondary.decorators = [ThemeDecorator(Theme.DARK)];
-
-Secondary.decorators = [StoreDecorator({
-    user: {},
-})];
+Secondary.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];
