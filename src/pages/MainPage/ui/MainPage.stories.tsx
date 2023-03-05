@@ -3,7 +3,6 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import { WithError } from 'features/AuthByUsername/ui/LoginForm/LoginForm.stories';
 import MainPage from './MainPage';
 
 export default {
@@ -14,7 +13,7 @@ export default {
     },
 } as ComponentMeta<typeof MainPage>;
 
-const Template: ComponentStory<typeof MainPage> = (args) => (
+const Template: ComponentStory<typeof MainPage> = () => (
     <MainPage />
 );
 
@@ -25,6 +24,5 @@ Primary.args = {
 Primary.decorators = [StoreDecorator({})];
 
 export const Secondary = Template.bind({});
-Secondary.args = {
-};
+Secondary.args = {};
 Secondary.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];

@@ -3,7 +3,6 @@ import { NavBar } from 'widgets/NavBar';
 import { useTheme } from 'app/providers/ThemeProvider';
 import { SideBar } from 'widgets/SideBar';
 import { Suspense, useEffect, useState } from 'react';
-import Modal from 'shared/ui/Modal/Modal';
 import { useDispatch } from 'react-redux';
 import { userActions } from 'enteties/User';
 import { AppRouter } from './providers/router';

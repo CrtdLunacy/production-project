@@ -1,5 +1,6 @@
 import {
-    ReactNode, useEffect, useRef, useState,
+    MutableRefObject,
+    ReactNode, RefObject, useEffect, useRef, useState,
 } from 'react';
 import { createPortal } from 'react-dom';
 
@@ -11,7 +12,7 @@ const Portal = (props: PortalProps) => {
     const {
         children,
     } = props;
-    const ref = useRef();
+    const ref = useRef<Element | null | undefined>(null);
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {
