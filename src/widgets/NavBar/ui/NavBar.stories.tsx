@@ -22,13 +22,11 @@ Light.decorators = [StoreDecorator({})];
 
 export const Dark = Template.bind({});
 Dark.args = {};
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
-Dark.decorators = [StoreDecorator({})];
+Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];
 
 export const Auth = Template.bind({});
 Auth.args = {};
-Auth.decorators = [ThemeDecorator(Theme.DARK)];
-Auth.decorators = [StoreDecorator({
+Auth.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
     user: {
         authData: {},
     },
