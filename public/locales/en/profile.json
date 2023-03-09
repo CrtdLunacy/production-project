@@ -1,4 +1,14 @@
 {
   "Ваше имя": "Your name",
-  "Ваша фамилия": "Your lastname"
+  "Ваша фамилия": "Your lastname",
+  "Ваш возраст": "Age",
+  "Город": "City",
+  "Имя профиля": "Username",
+  "Аватар": "Profile icon",
+  "Ошибка профиля": "An error occurred while loading the profile",
+  "Обновите страницу": "Please try to reload page",
+  "Редактировать": "Edit",
+  "Отменить": "Cancel",
+  "Сохранить": "Save",
+  "Профиль": "Account"
 }

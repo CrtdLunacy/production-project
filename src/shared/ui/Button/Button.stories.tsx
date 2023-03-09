@@ -100,3 +100,11 @@ SquareSizeXL.args = {
     square: true,
     size: ButtonSize.XL,
 };
+
+export const SquareFullSize = Template.bind({});
+SquareFullSize.args = {
+    children: '>',
+    theme: ButtonTheme.BACKGROUND_INVERTED,
+    square: true,
+    size: ButtonSize.MAX_HEIGHT,
+};
