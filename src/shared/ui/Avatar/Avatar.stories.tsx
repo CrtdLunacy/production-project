@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
 import Avatar from './Avatar';
-import AvatarImg from './storyybook.jpg';
+import AvatarImg from '../../assets/tests/storyybook.jpg';
 
 export default {
     title: 'shared/Avatar',

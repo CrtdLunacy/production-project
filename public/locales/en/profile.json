@@ -10,5 +10,10 @@
   "Редактировать": "Edit",
   "Отменить": "Cancel",
   "Сохранить": "Save",
-  "Профиль": "Account"
+  "Профиль": "Account",
+  "Ошибка сервера": "Server error, try to reload page",
+  "Ошибка города": "Invalid city",
+  "Ошибка фио": "Invalid name or lastname",
+  "Ошибка отсутствия данных": "Invalid data, try to reload page",
+  "Ошибка возраста": "Invalid age"
 }
