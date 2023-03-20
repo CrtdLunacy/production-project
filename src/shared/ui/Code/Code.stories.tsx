@@ -3,17 +3,17 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import ArcticlesPage from './ArcticlesPage';
+import Code from './Code';
 
 export default {
-    title: 'page/ArcticlesPage',
-    component: ArcticlesPage,
+    title: 'shared/Code',
+    component: Code,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-} as ComponentMeta<typeof ArcticlesPage>;
+} as ComponentMeta<typeof Code>;
 
-const Template: ComponentStory<typeof ArcticlesPage> = (args) => <ArcticlesPage {...args} />;
+const Template: ComponentStory<typeof Code> = (args) => <Code {...args} />;
 
 export const Light = Template.bind({});
 Light.args = {};
