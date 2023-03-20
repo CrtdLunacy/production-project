@@ -1,5 +1,4 @@
 import { classNames, Mods } from 'shared/lib/classNames/classNames';
-import { useTranslation } from 'react-i18next';
 import { FC, memo } from 'react';
 import styles from './Text.module.scss';
 
@@ -39,7 +38,6 @@ const Text: FC<TextProps> = memo((props: TextProps) => {
         align = TextAlign.LEFT,
         size = TextSize.M,
     } = props;
-    const { t } = useTranslation();
 
     const mods: Mods = {
         [styles[align]]: true,

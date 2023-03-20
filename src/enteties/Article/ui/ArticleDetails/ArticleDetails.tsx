@@ -1,5 +1,4 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { useTranslation } from 'react-i18next';
 import { memo, useCallback, useEffect } from 'react';
 import { ReducersList, useDynamicModuleLoad } from 'shared/lib/hooks/useDynamicModuleLoad/useDynamicModuleLoad';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
@@ -36,7 +35,6 @@ const initialReducers: ReducersList = {
 };
 
 export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
-    const { t } = useTranslation();
     const dynamicModule = useDynamicModuleLoad({
         reducers: initialReducers,
     });

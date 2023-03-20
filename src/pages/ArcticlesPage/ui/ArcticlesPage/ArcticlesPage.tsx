@@ -11,9 +11,7 @@ const ArcticlesPage = ({ className }: ArcticlesPageProps) => {
     const { t } = useTranslation('article');
 
     return (
-        <div className={classNames(styles.ArcticlesPage, {}, [className])}>
-            Art page
-        </div>
+        <div className={classNames(styles.ArcticlesPage, {}, [className])} />
     );
 };
 
