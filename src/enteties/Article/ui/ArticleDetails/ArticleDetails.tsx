@@ -34,6 +34,19 @@ const initialReducers: ReducersList = {
     articleDetails: articleDetailsReducer,
 };
 
+const renderBlock = (block: ArticleBlock) => {
+    switch (block.type) {
+    case ArticleBlockType.CODE:
+        return <ArticleCodeBlockComponent className={styles.block} block={block} key={block.id} />;
+    case ArticleBlockType.IMAGE:
+        return <ArticleImageBlockComponent className={styles.block} block={block} key={block.id} />;
+    case ArticleBlockType.TEXT:
+        return <ArticleTextBlockComponent className={styles.block} block={block} key={block.id} />;
+    default:
+        return null;
+    }
+};
+
 export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
     const dynamicModule = useDynamicModuleLoad({
         reducers: initialReducers,
@@ -42,19 +55,6 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
     const isLoading = useSelector(getArticleDetailsIsLoading);
     const error = useSelector(getArticleDetailsError);
     const data = useSelector(getArticleDetailsData);
-
-    const renderBlock = useCallback((block: ArticleBlock) => {
-        switch (block.type) {
-        case ArticleBlockType.CODE:
-            return <ArticleCodeBlockComponent className={styles.block} block={block} key={block.id} />;
-        case ArticleBlockType.IMAGE:
-            return <ArticleImageBlockComponent className={styles.block} block={block} key={block.id} />;
-        case ArticleBlockType.TEXT:
-            return <ArticleTextBlockComponent className={styles.block} block={block} key={block.id} />;
-        default:
-            return null;
-        }
-    }, []);
 
     useEffect(() => {
         if (__PROJECT__ !== 'storybook') dispatch(fetchArticleById(id));
