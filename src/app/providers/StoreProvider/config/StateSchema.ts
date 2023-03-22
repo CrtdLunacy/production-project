@@ -7,12 +7,14 @@ import { ProfileSchema } from 'enteties/Profile';
 import { AxiosInstance } from 'axios';
 import { NavigateOptions, To } from 'react-router-dom';
 import { ArticleDetailsSchema } from 'enteties/Article';
+import { ArticleDetailsCommentSchema } from 'pages/ArcticleDetailsPage';
 
 export interface StateSchema {
     user: UserSchema;
     loginForm?: LoginSchema;
     profile?: ProfileSchema;
     articleDetails?: ArticleDetailsSchema;
+    articleDetailsCommets?: ArticleDetailsCommentSchema;
 }
 export type StateSchemaKey = keyof StateSchema;
 
