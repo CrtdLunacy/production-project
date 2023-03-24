@@ -8,13 +8,17 @@ import { AxiosInstance } from 'axios';
 import { NavigateOptions, To } from 'react-router-dom';
 import { ArticleDetailsSchema } from 'enteties/Article';
 import { ArticleDetailsCommentSchema } from 'pages/ArcticleDetailsPage';
+import { addCommentFormSchema } from 'features/addCommentForm';
 
 export interface StateSchema {
     user: UserSchema;
+
+    // Асинхронные редюсеры
     loginForm?: LoginSchema;
     profile?: ProfileSchema;
     articleDetails?: ArticleDetailsSchema;
     articleDetailsCommets?: ArticleDetailsCommentSchema;
+    addCommentForm?: addCommentFormSchema;
 }
 export type StateSchemaKey = keyof StateSchema;
 

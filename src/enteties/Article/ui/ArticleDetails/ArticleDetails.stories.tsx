@@ -20,6 +20,11 @@ const Template: ComponentStory<typeof ArticleDetails> = (args) => <ArticleDetail
 const article: Article = {
     id: '1',
     title: 'JavaS News',
+    user: {
+        id: '1',
+        username: 'Test',
+        avatar: 'https://user-images.githubusercontent.com/65357821/82758846-0394c180-9e0f-11ea-8b02-51f885eff3f5.png',
+    },
     subtitle: 'Что нового в JS в 2023 году?',
     img: 'https://user-images.githubusercontent.com/65357821/82758846-0394c180-9e0f-11ea-8b02-51f885eff3f5.png',
     views: 0,

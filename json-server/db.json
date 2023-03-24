@@ -19,7 +19,10 @@
       "img": "https://user-images.githubusercontent.com/65357821/82758846-0394c180-9e0f-11ea-8b02-51f885eff3f5.png",
       "views": 0,
       "createdAt": "26.02.2022",
-      "type": ["IT"],
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -100,32 +103,64 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "2"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "Test comment",
+      "id": "vQr32yp"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "New test comment",
+      "id": "opfKlDb"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "new test by",
+      "id": "O5xwvON"
     }
   ],
   "users": [
     {
       "id": "1",
-      "username": "admin",
+      "username": "SkinnyGirl666",
       "password": "123",
       "role": "ADMIN",
       "avatar": "https://symbolikon.com/wp-content/uploads/edd/2022/09/Marden-bold-.png"
     },
     {
       "id": "2",
-      "username": "user",
+      "username": "PoorUser123",
       "password": "123",
       "role": "USER",
       "avatar": "https://cdn4.iconfinder.com/data/icons/space-and-astronaut/128/9-512.png"
     }
   ],
-  "profile": {
-    "first": "Вячеслав",
-    "lastname": "Фролов",
-    "age": 29,
-    "currency": "RUB",
-    "country": "Georgia",
-    "city": "Батуми",
-    "username": "admin",
-    "avatar": "https://img.freepik.com/premium-photo/sute-girl-hacker-with-laptop-avatar-cartoon-style-black-background-generated-ai_88188-3328.jpg?size=338&ext=jpg"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "first": "Гном",
+      "lastname": "Гномыч",
+      "age": 33,
+      "currency": "USD",
+      "country": "Armenia",
+      "city": "Ереван",
+      "username": "SkinnyGirl666",
+      "avatar": "https://img.freepik.com/premium-photo/sute-girl-hacker-with-laptop-avatar-cartoon-style-black-background-generated-ai_88188-3328.jpg?size=338&ext=jpg"
+    },
+    {
+      "id": "2",
+      "first": "Покемон",
+      "lastname": "Покемонов",
+      "age": 29,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Калининград",
+      "username": "PoorUser123",
+      "avatar": "https://images.secretlab.co/theme/common/collab_pokemon_catalog_charizard-min.png"
+    }
+  ]
 }

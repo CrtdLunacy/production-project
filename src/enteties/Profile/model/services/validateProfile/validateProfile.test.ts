@@ -4,6 +4,7 @@ import { ValidateProfileError } from 'enteties/Profile/model/types/profile';
 import { validateProfile } from './validateProfile';
 
 const data = {
+    id: '1',
     username: 'admin',
     age: 28,
     first: 'admin',

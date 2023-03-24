@@ -3,11 +3,13 @@ import { CommentType } from 'enteties/Comment';
 import Avatar from 'shared/ui/Avatar/Avatar';
 import Text from 'shared/ui/Text/Text';
 import SkeletonLoader from 'shared/ui/SkeletonLoader/SkeletonLoader';
+import AppLink from 'shared/ui/AppLink/AppLink';
+import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import styles from './CommentCard.module.scss';
 
 interface CommentCardProps {
   className?: string;
-  comment: CommentType;
+  comment?: CommentType;
   isLoading?: boolean;
 }
 
@@ -19,7 +21,7 @@ const CommentCard = (props: CommentCardProps) => {
 
     if (isLoading) {
         return (
-            <div className={classNames(styles.CommentCard, {}, [className])}>
+            <div className={classNames(styles.CommentCard, {}, [className, styles.loading])}>
                 <div className={styles.header}>
                     <SkeletonLoader height={30} width={30} border="50%" />
                     <SkeletonLoader className={styles.username} height={16} width={100} />
@@ -29,15 +31,19 @@ const CommentCard = (props: CommentCardProps) => {
         );
     }
 
+    if (!comment) {
+        return null;
+    }
+
     return (
         <div className={classNames(styles.CommentCard, {}, [className])}>
-            <div className={styles.header}>
+            <AppLink to={`${RoutePath.profile}${comment.user.id}`} className={styles.header}>
                 <Avatar
                     size={30}
                     src={comment.user.avatar ?? anonym}
                 />
                 <Text className={styles.username} title={comment.user.username} />
-            </div>
+            </AppLink>
             <Text className={styles.text} text={comment.text} />
         </div>
     );

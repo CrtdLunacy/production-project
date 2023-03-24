@@ -10,11 +10,11 @@ import EyeIcon from 'shared/assets/icons/eyesight.svg';
 import CalendarIcon from 'shared/assets/icons/calendar.svg';
 import Icon from 'shared/ui/Icon/Icon';
 import ArticleTextBlockComponent
-    from './ArticleTextBlockComponent/ArticleTextBlockComponent';
+    from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import ArticleImageBlockComponent
-    from './ArticleImageBlockComponent/ArticleImageBlockComponent';
+    from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
 import ArticleCodeBlockComponent
-    from './ArticleCodeBlockComponent/ArticleCodeBlockComponent';
+    from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import { ArticleBlock, ArticleBlockType } from '../../model/types/article';
 import {
     getArticleDetailsData,

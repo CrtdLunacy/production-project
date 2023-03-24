@@ -1,6 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
+import { ArticleList } from 'enteties/Article';
 import styles from './ArcticlesPage.module.scss';
 
 interface ArcticlesPageProps {
@@ -11,7 +12,9 @@ const ArcticlesPage = ({ className }: ArcticlesPageProps) => {
     const { t } = useTranslation('article');
 
     return (
-        <div className={classNames(styles.ArcticlesPage, {}, [className])} />
+        <div className={classNames(styles.ArcticlesPage, {}, [className])}>
+            <ArticleList articles={[]} />
+        </div>
     );
 };
 
