@@ -6,6 +6,7 @@
 
     .views {
         margin-left: auto;
+        margin-right: 8px;
     }
 
     .username {
@@ -28,9 +29,10 @@
     }
 
     .textBlock {
+        position: relative;
         max-height: 200px;
         overflow-y: hidden;
-        text-overflow: ellipsis;
+        //text-overflow: ellipsis;
     }
 
     .footer {
