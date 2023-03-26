@@ -1,6 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
+import PageLayout from 'shared/ui/PageLayout/PageLayout';
 import styles from './NotFoundPage.module.scss';
 
 interface NotFoundPageProps {
@@ -11,9 +12,9 @@ const NotFoundPage = memo(({ className }: NotFoundPageProps) => {
     const { t } = useTranslation();
 
     return (
-        <div className={classNames(styles.NotFoundPage, {}, [className])}>
+        <PageLayout className={classNames(styles.NotFoundPage, {}, [className])}>
             {t('Страница не найдена')}
-        </div>
+        </PageLayout>
     );
 });
 

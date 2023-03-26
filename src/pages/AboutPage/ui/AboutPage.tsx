@@ -1,13 +1,14 @@
 import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
+import PageLayout from 'shared/ui/PageLayout/PageLayout';
 
 const AboutPage = memo(() => {
     const { t } = useTranslation();
 
     return (
-        <div>
+        <PageLayout>
             {t('О сайте')}
-        </div>
+        </PageLayout>
     );
 });
 

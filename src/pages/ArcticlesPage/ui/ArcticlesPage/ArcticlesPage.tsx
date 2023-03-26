@@ -7,7 +7,10 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
 import { ArticleViewSelector } from 'features/ArticleViewSelector';
-import { fetchArticlesList } from '../../model/services/fetchArticlesList';
+import PageLayout from 'shared/ui/PageLayout/PageLayout';
+import { fetchNextArticlesPage } from 'pages/ArcticlesPage/model/services/fetchNextArticles/fetchNextArticlesPage';
+import Text, { TextTheme } from 'shared/ui/Text/Text';
+import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 import {
     getArticlePageError,
     getArticlePageIsLoading,
@@ -36,16 +39,30 @@ const ArcticlesPage = ({ className }: ArcticlesPageProps) => {
     const view = useSelector(getArticlePageView);
 
     useInitialEffect(() => {
-        dispatch(fetchArticlesList());
         dispatch(articlePageActions.initState());
+        dispatch(fetchArticlesList({
+            page: 1,
+        }));
     });
 
     const handleChangeView = useCallback((view: ArticleView) => {
         dispatch(articlePageActions.setView(view));
     }, [dispatch]);
 
+    const handleLoadMoreArticles = useCallback(() => {
+        dispatch(fetchNextArticlesPage());
+    }, [dispatch]);
+
+    if (error) {
+        return (
+            <PageLayout className={classNames(styles.ArcticlesPage, {}, [className, styles.errorPage])}>
+                <Text theme={TextTheme.ERROR} title={error} />
+            </PageLayout>
+        );
+    }
+
     return (
-        <div className={classNames(styles.ArcticlesPage, {}, [className])}>
+        <PageLayout onScrollEnd={handleLoadMoreArticles} className={classNames(styles.ArcticlesPage, {}, [className])}>
             <ArticleViewSelector
                 view={view}
                 onViewClick={handleChangeView}
@@ -55,7 +72,7 @@ const ArcticlesPage = ({ className }: ArcticlesPageProps) => {
                 articles={articles}
                 view={view}
             />
-        </div>
+        </PageLayout>
     );
 };
 

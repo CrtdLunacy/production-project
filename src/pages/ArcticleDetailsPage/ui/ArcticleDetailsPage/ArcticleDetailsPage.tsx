@@ -12,6 +12,7 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { AddCommentForm } from 'features/addCommentForm';
 import Button, { ButtonTheme } from 'shared/ui/Button/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import PageLayout from 'shared/ui/PageLayout/PageLayout';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
@@ -50,14 +51,14 @@ const ArcticleDetailsPage = ({ className }: ArcticleDetailsPageProps) => {
 
     if (!id) {
         return (
-            <div className={classNames(styles.ArcticleDetailsPage, {}, [className])}>
+            <PageLayout className={classNames(styles.ArcticleDetailsPage, {}, [className])}>
                 {t('Статья отсутствует')}
-            </div>
+            </PageLayout>
         );
     }
 
     return (
-        <div className={classNames(styles.ArcticleDetailsPage, {}, [className])}>
+        <PageLayout className={classNames(styles.ArcticleDetailsPage, {}, [className])}>
             <Button onClick={handleBackToList} theme={ButtonTheme.OUTLINE}>
                 {t('Назад к списку')}
             </Button>
@@ -73,7 +74,7 @@ const ArcticleDetailsPage = ({ className }: ArcticleDetailsPageProps) => {
                 isLoading={commentsIsLoading}
                 comments={comments}
             />
-        </div>
+        </PageLayout>
     );
 };
 

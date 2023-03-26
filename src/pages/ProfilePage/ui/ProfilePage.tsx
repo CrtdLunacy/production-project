@@ -21,6 +21,7 @@ import Text, { TextTheme } from 'shared/ui/Text/Text';
 import { ValidateProfileError } from 'enteties/Profile/model/types/profile';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useParams } from 'react-router-dom';
+import PageLayout from 'shared/ui/PageLayout/PageLayout';
 import ProfilePageHeader from './ProfilePageHeader/ProfilePageHeader';
 
 interface ProfilePageProps {
@@ -94,7 +95,7 @@ const ProfilePage = memo(({ className }: ProfilePageProps) => {
     }, [dispatch]);
 
     return (
-        <div className={classNames('', {}, [className])}>
+        <PageLayout className={classNames('', {}, [className])}>
             <ProfilePageHeader />
             {validateErrors?.length && validateErrors.map((e) => (
                 <Text key={e} theme={TextTheme.ERROR} text={validateErrorTranslate[e]} />
@@ -113,7 +114,7 @@ const ProfilePage = memo(({ className }: ProfilePageProps) => {
                 onChangeCountry={handleChangeCountry}
                 readonly={readonly}
             />
-        </div>
+        </PageLayout>
     );
 });
 
