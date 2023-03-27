@@ -7,7 +7,7 @@ jest.mock('../fetchArticlesList/fetchArticlesList');
 describe('fetchNextArticlesPage.test', () => {
     test('success', async () => {
         const thunk = new TestAsyncThunk(fetchNextArticlesPage, {
-            articlePage: {
+            articlesPage: {
                 page: 2,
                 ids: [],
                 entities: {},
@@ -24,7 +24,7 @@ describe('fetchNextArticlesPage.test', () => {
 
     test('fetchArticleList not called', async () => {
         const thunk = new TestAsyncThunk(fetchNextArticlesPage, {
-            articlePage: {
+            articlesPage: {
                 page: 2,
                 ids: [],
                 entities: {},
@@ -41,7 +41,7 @@ describe('fetchNextArticlesPage.test', () => {
 
     test('Loading is true', async () => {
         const thunk = new TestAsyncThunk(fetchNextArticlesPage, {
-            articlePage: {
+            articlesPage: {
                 page: 2,
                 ids: [],
                 entities: {},

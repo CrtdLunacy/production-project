@@ -8,15 +8,16 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
 import { ArticleViewSelector } from 'features/ArticleViewSelector';
 import PageLayout from 'shared/ui/PageLayout/PageLayout';
-import { fetchNextArticlesPage } from 'pages/ArcticlesPage/model/services/fetchNextArticles/fetchNextArticlesPage';
 import Text, { TextTheme } from 'shared/ui/Text/Text';
-import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
+import { fetchNextArticlesPage } from '../../model/services/fetchNextArticles/fetchNextArticlesPage';
+import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import {
     getArticlePageError,
+    getArticlePageInitState,
     getArticlePageIsLoading,
     getArticlePageView,
 } from '../../model/selectors/articlePageSelectors';
-import { articlePageActions, articlePageReducer, getArticles } from '../../model/slices/articlePageSlice';
+import { articlesPageActions, articlesPageReducer, getArticles } from '../../model/slices/articlesPageSlice';
 import styles from './ArcticlesPage.module.scss';
 
 interface ArcticlesPageProps {
@@ -24,29 +25,28 @@ interface ArcticlesPageProps {
 }
 
 const initialReducers: ReducersList = {
-    articlePage: articlePageReducer,
+    articlesPage: articlesPageReducer,
 };
 
 const ArcticlesPage = ({ className }: ArcticlesPageProps) => {
     const { t } = useTranslation('article');
     const dynamicModule = useDynamicModuleLoad({
         reducers: initialReducers,
+        isRemoved: false,
     });
     const dispatch = useAppDispatch();
     const articles = useSelector(getArticles.selectAll);
     const isLoading = useSelector(getArticlePageIsLoading);
     const error = useSelector(getArticlePageError);
     const view = useSelector(getArticlePageView);
+    const inited = useSelector(getArticlePageInitState);
 
     useInitialEffect(() => {
-        dispatch(articlePageActions.initState());
-        dispatch(fetchArticlesList({
-            page: 1,
-        }));
+        dispatch(initArticlesPage());
     });
 
     const handleChangeView = useCallback((view: ArticleView) => {
-        dispatch(articlePageActions.setView(view));
+        dispatch(articlesPageActions.setView(view));
     }, [dispatch]);
 
     const handleLoadMoreArticles = useCallback(() => {
@@ -62,7 +62,10 @@ const ArcticlesPage = ({ className }: ArcticlesPageProps) => {
     }
 
     return (
-        <PageLayout onScrollEnd={handleLoadMoreArticles} className={classNames(styles.ArcticlesPage, {}, [className])}>
+        <PageLayout
+            onScrollEnd={handleLoadMoreArticles}
+            className={classNames(styles.ArcticlesPage, {}, [className])}
+        >
             <ArticleViewSelector
                 view={view}
                 onViewClick={handleChangeView}
