@@ -3,7 +3,7 @@ import {
 } from '@reduxjs/toolkit';
 import { userReducer } from 'enteties/User';
 import { $api } from 'shared/api/api';
-import { NavigateOptions, To } from 'react-router-dom';
+import { saveScrollPositionReducer } from 'features/SaveScrollPosition';
 import { StateSchema } from './StateSchema';
 import { createReducerManager } from './reducerManager';
 
@@ -14,6 +14,7 @@ export function createReduxStore(
     const RootReducers:ReducersMapObject<StateSchema> = {
         ...asyncReducers,
         user: userReducer,
+        scrollPosition: saveScrollPositionReducer,
     };
 
     const reducerManager = createReducerManager(RootReducers);

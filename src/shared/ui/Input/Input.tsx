@@ -27,7 +27,6 @@ const Input = memo((props: InputProps) => {
     } = props;
 
     const [isFocused, setIsFocused] = useState(false);
-    const [inputValue, setInputValue] = useState(value || '');
     const [caretPosition, setCaretPosition] = useState(0);
     const ref = useRef<HTMLInputElement>(null);
 
@@ -56,7 +55,6 @@ const Input = memo((props: InputProps) => {
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         if (isCaretVisible) {
-            setInputValue(e.target.value);
             onChange?.(e.target.value);
             setCaretPosition(e.target.value.length);
         }
@@ -78,7 +76,7 @@ const Input = memo((props: InputProps) => {
                 <input
                     ref={ref}
                     type={type}
-                    value={inputValue}
+                    value={value}
                     onChange={handleChange}
                     className={styles.input}
                     onFocus={handleFocus}

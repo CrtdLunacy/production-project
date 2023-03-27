@@ -21,7 +21,7 @@ import Text, { TextTheme } from 'shared/ui/Text/Text';
 import { ValidateProfileError } from 'enteties/Profile/model/types/profile';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useParams } from 'react-router-dom';
-import PageLayout from 'shared/ui/PageLayout/PageLayout';
+import PageLayout from 'widgets/PageLayout/PageLayout';
 import ProfilePageHeader from './ProfilePageHeader/ProfilePageHeader';
 
 interface ProfilePageProps {

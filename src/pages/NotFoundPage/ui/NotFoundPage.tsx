@@ -1,7 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
-import PageLayout from 'shared/ui/PageLayout/PageLayout';
+import PageLayout from 'widgets/PageLayout/PageLayout';
 import styles from './NotFoundPage.module.scss';
 
 interface NotFoundPageProps {
