@@ -4,24 +4,21 @@ import {
 } from '@reduxjs/toolkit';
 import { CommentType } from 'enteties/Comment';
 import { StateSchema } from 'app/providers/StoreProvider';
-import { fetchArticleById } from 'enteties/Article/model/services/fetchArticleById/fetchArticleById';
-import { Article } from 'enteties/Article';
 import {
     fetchCommentsByArticleId,
-} from 'pages/ArcticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+} from '../services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { ArticleDetailsCommentSchema } from '../types/ArticleDetailsCommentSchema';
 
 const commentsAdapter = createEntityAdapter<CommentType>({
-    // Assume IDs are stored in a field other than `book.id`
     selectId: (comment) => comment.id,
 });
 
 export const getArticleComments = commentsAdapter.getSelectors<StateSchema>(
-    (state) => state.articleDetailsCommets || commentsAdapter.getInitialState(),
+    (state) => state.articleDetailsPage?.comments || commentsAdapter.getInitialState(),
 );
 
-const arcticleDetailsCommentsSlice = createSlice({
-    name: 'arcticleDetailsComments',
+const articleDetailsCommentsSlice = createSlice({
+    name: 'articleDetailsComments',
     initialState: commentsAdapter.getInitialState<ArticleDetailsCommentSchema>({
         isLoading: false,
         error: undefined,
@@ -48,4 +45,4 @@ const arcticleDetailsCommentsSlice = createSlice({
     },
 });
 
-export const { reducer: arcticleDetailsCommentsReducer } = arcticleDetailsCommentsSlice;
+export const { reducer: articleDetailsCommentsReducer } = articleDetailsCommentsSlice;

@@ -6,14 +6,14 @@ import { profileReducer } from 'enteties/Profile';
 import { ReducersList } from 'shared/lib/hooks/useDynamicModuleLoad/useDynamicModuleLoad';
 import { articleDetailsReducer } from 'enteties/Article/model/slice/articleDetailsSlice';
 import { addCommentFormReducer } from 'features/addCommentForm/model/slices/addCommentFormSlice';
-import { arcticleDetailsCommentsReducer } from 'pages/ArcticleDetailsPage/model/slices/arcticleDetailsCommentsSlice';
+import { articleDetailsPageReducer } from 'pages/ArcticleDetailsPage/model/slices';
 
 const defaultAsyncReducers: ReducersList = {
     loginForm: loginReducer,
     profile: profileReducer,
     articleDetails: articleDetailsReducer,
     addCommentForm: addCommentFormReducer,
-    articleDetailsCommets: arcticleDetailsCommentsReducer,
+    articleDetailsPage: articleDetailsPageReducer,
 };
 
 export const StoreDecorator = (

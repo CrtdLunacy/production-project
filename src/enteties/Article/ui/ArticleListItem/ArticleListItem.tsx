@@ -6,9 +6,11 @@ import EyeIcon from 'shared/assets/icons/eyesight.svg';
 import Card from 'shared/ui/Card/Card';
 import Avatar from 'shared/ui/Avatar/Avatar';
 import Button, { ButtonTheme } from 'shared/ui/Button/Button';
-import { useCallback } from 'react';
+import { HTMLAttributeAnchorTarget, memo, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import AppLink from 'shared/ui/AppLink/AppLink';
+import App from 'app/App';
 import ArticleTextBlockComponent from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import {
     Article, ArticleBlockType, ArticleTextBlock, ArticleView,
@@ -19,20 +21,17 @@ interface ArticleListItemProps {
   className?: string;
   article: Article;
   view: ArticleView;
+  target?: HTMLAttributeAnchorTarget;
 }
 
-const ArticleListItem = (props: ArticleListItemProps) => {
+const ArticleListItem = memo((props: ArticleListItemProps) => {
     const {
         className,
         article,
         view,
+        target,
     } = props;
     const { t } = useTranslation();
-    const navigate = useNavigate();
-
-    const handleOpenArticle = useCallback(() => {
-        navigate(RoutePath.article_details + article.id);
-    }, [article.id, navigate]);
 
     const types = <Text text={article.type.join(', ')} className={styles.types} />;
     const views = (
@@ -63,12 +62,16 @@ const ArticleListItem = (props: ArticleListItemProps) => {
                         />
                     )}
                     <div className={styles.footer}>
-                        <Button
-                            theme={ButtonTheme.OUTLINE}
-                            onClick={handleOpenArticle}
+                        <AppLink
+                            target={target}
+                            to={RoutePath.article_details + article.id}
                         >
-                            {t('Читать далее')}
-                        </Button>
+                            <Button
+                                theme={ButtonTheme.OUTLINE}
+                            >
+                                {t('Читать далее')}
+                            </Button>
+                        </AppLink>
                         {views}
                     </div>
                 </Card>
@@ -77,8 +80,12 @@ const ArticleListItem = (props: ArticleListItemProps) => {
     }
 
     return (
-        <div className={classNames(styles.ArticleListItem, {}, [className, styles[view]])}>
-            <Card onClick={handleOpenArticle} className={styles.card}>
+        <AppLink
+            target={target}
+            to={RoutePath.article_details + article.id}
+            className={classNames(styles.ArticleListItem, {}, [className, styles[view]])}
+        >
+            <Card className={styles.card}>
                 <div className={styles.imgWrapper}>
                     <img
                         src={article.img}
@@ -93,8 +100,8 @@ const ArticleListItem = (props: ArticleListItemProps) => {
                 </div>
                 <Text text={article.title} className={styles.title} />
             </Card>
-        </div>
+        </AppLink>
     );
-};
+});
 
 export default ArticleListItem;

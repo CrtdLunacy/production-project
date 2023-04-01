@@ -5,12 +5,11 @@ import {
 } from '@reduxjs/toolkit';
 import { ProfileSchema } from 'enteties/Profile';
 import { AxiosInstance } from 'axios';
-import { NavigateOptions, To } from 'react-router-dom';
 import { ArticleDetailsSchema } from 'enteties/Article';
-import { ArticleDetailsCommentSchema } from 'pages/ArcticleDetailsPage';
 import { addCommentFormSchema } from 'features/addCommentForm';
 import { ArticlePageSchema } from 'pages/ArcticlesPage';
 import { SaveScrollPositionSchema } from 'features/SaveScrollPosition';
+import { ArticleDetailsPageSchema } from 'pages/ArcticleDetailsPage';
 
 export interface StateSchema {
     user: UserSchema;
@@ -20,9 +19,9 @@ export interface StateSchema {
     loginForm?: LoginSchema;
     profile?: ProfileSchema;
     articleDetails?: ArticleDetailsSchema;
-    articleDetailsCommets?: ArticleDetailsCommentSchema;
     addCommentForm?: addCommentFormSchema;
     articlesPage?: ArticlePageSchema;
+    articleDetailsPage?: ArticleDetailsPageSchema;
 }
 export type StateSchemaKey = keyof StateSchema;
 export type MountedReducers = OptionalRecord<StateSchemaKey, boolean>;

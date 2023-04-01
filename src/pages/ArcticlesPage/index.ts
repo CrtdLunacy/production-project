@@ -8,4 +8,7 @@ export {
     getArticlePageHasMore,
     getArticlePageInitState,
     getArticlePageLimit,
+    getArticlePageOrder,
+    getArticlePageSearch,
+    getArticlePageSort,
 } from './model/selectors/articlePageSelectors';

@@ -6,14 +6,14 @@ import { ReducersList, useDynamicModuleLoad } from 'shared/lib/hooks/useDynamicM
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
-import { ArticleViewSelector } from 'features/ArticleViewSelector';
 import PageLayout from 'widgets/PageLayout/PageLayout';
 import Text, { TextTheme } from 'shared/ui/Text/Text';
+import ArticleFilters from 'pages/ArcticlesPage/ui/ArticleFilters/ArticleFilters';
+import { useSearchParams } from 'react-router-dom';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticles/fetchNextArticlesPage';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import {
     getArticlePageError,
-    getArticlePageInitState,
     getArticlePageIsLoading,
     getArticlePageView,
 } from '../../model/selectors/articlePageSelectors';
@@ -39,15 +39,11 @@ const ArcticlesPage = ({ className }: ArcticlesPageProps) => {
     const isLoading = useSelector(getArticlePageIsLoading);
     const error = useSelector(getArticlePageError);
     const view = useSelector(getArticlePageView);
-    const inited = useSelector(getArticlePageInitState);
+    const [searchParams] = useSearchParams();
 
     useInitialEffect(() => {
-        dispatch(initArticlesPage());
+        dispatch(initArticlesPage(searchParams));
     });
-
-    const handleChangeView = useCallback((view: ArticleView) => {
-        dispatch(articlesPageActions.setView(view));
-    }, [dispatch]);
 
     const handleLoadMoreArticles = useCallback(() => {
         dispatch(fetchNextArticlesPage());
@@ -66,14 +62,12 @@ const ArcticlesPage = ({ className }: ArcticlesPageProps) => {
             onScrollEnd={handleLoadMoreArticles}
             className={classNames(styles.ArcticlesPage, {}, [className])}
         >
-            <ArticleViewSelector
-                view={view}
-                onViewClick={handleChangeView}
-            />
+            <ArticleFilters />
             <ArticleList
                 isLoading={isLoading}
                 articles={articles}
                 view={view}
+                className={styles.list}
             />
         </PageLayout>
     );

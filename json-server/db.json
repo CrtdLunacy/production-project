@@ -17,7 +17,7 @@
       "title": "JavaS News",
       "subtitle": "Что нового в JS в 2023 году?",
       "img": "https://user-images.githubusercontent.com/65357821/82758846-0394c180-9e0f-11ea-8b02-51f885eff3f5.png",
-      "views": 0,
+      "views": 10,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
@@ -89,7 +89,7 @@
       "title": "Laravel News",
       "subtitle": "Что нового в Laravel в 2023 году?",
       "img": "https://static-00.iconduck.com/assets.00/laravel-icon-497x512-uwybstke.png",
-      "views": 0,
+      "views": 100,
       "createdAt": "26.02.2023",
       "userId": "2",
       "type": [
@@ -161,12 +161,13 @@
       "title": "Обновление Chat GPT",
       "subtitle": "Новые фишки чата от open.ai",
       "img": "https://1000logos.net/wp-content/uploads/2023/02/ChatGPT-Emblem.png",
-      "views": 0,
-      "createdAt": "24.03.2023",
+      "views": 450,
+      "createdAt": "24.05.2021",
       "userId": "2",
       "type": [
         "IT",
-        "SCIENCE"
+        "MEDICINE",
+        "ECONOMY"
       ],
       "blocks": [
         {
@@ -231,14 +232,14 @@
     },
     {
       "id": "4",
-      "title": "Обновление Chat GPT",
-      "subtitle": "Новые фишки чата от open.ai",
+      "title": "Обновление UX/UI",
+      "subtitle": "Новые фишки дизайнеров из отдела мертвых идей",
       "img": "https://1000logos.net/wp-content/uploads/2023/02/ChatGPT-Emblem.png",
-      "views": 0,
-      "createdAt": "24.03.2023",
+      "views": 20,
+      "createdAt": "04.01.2018",
       "userId": "2",
       "type": [
-        "IT",
+        "ECONOMY",
         "SCIENCE"
       ],
       "blocks": [
@@ -261,15 +262,14 @@
     },
     {
       "id": "5",
-      "title": "Обновление Chat GPT",
-      "subtitle": "Новые фишки чата от open.ai",
+      "title": "Рынок крипты",
+      "subtitle": "Бомжкоин - новая валюта Остазии",
       "img": "https://1000logos.net/wp-content/uploads/2023/02/ChatGPT-Emblem.png",
-      "views": 0,
-      "createdAt": "24.03.2023",
+      "views": 355,
+      "createdAt": "14.12.2022",
       "userId": "2",
       "type": [
-        "IT",
-        "SCIENCE"
+        "ECONOMY"
       ],
       "blocks": [
         {
@@ -1301,6 +1301,12 @@
       "userId": "1",
       "text": "Test Comment Now",
       "id": "fZYu7Zd"
+    },
+    {
+      "articleId": "5",
+      "userId": "1",
+      "text": "New comment",
+      "id": "bvkKTXR"
     }
   ],
   "users": [

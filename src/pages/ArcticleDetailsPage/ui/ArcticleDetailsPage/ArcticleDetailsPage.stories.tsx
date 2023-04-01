@@ -5,17 +5,17 @@ import { Theme } from 'app/providers/ThemeProvider';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import { Article } from 'enteties/Article';
 import { ArticleBlockType, ArticleType } from 'enteties/Article/model/types/article';
-import ArcticleDetailsPage from './ArcticleDetailsPage';
+import ArticleDetailsPage from './ArticleDetailsPage';
 
 export default {
-    title: 'pages/ArcticleDetailsPage',
-    component: ArcticleDetailsPage,
+    title: 'pages/ArticleDetailsPage',
+    component: ArticleDetailsPage,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-} as ComponentMeta<typeof ArcticleDetailsPage>;
+} as ComponentMeta<typeof ArticleDetailsPage>;
 
-const Template: ComponentStory<typeof ArcticleDetailsPage> = (args) => <ArcticleDetailsPage {...args} />;
+const Template: ComponentStory<typeof ArticleDetailsPage> = (args) => <ArticleDetailsPage {...args} />;
 
 const article: Article = {
     id: '1',

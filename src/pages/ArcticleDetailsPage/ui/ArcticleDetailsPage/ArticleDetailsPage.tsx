@@ -1,9 +1,9 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
-import { ArticleDetails } from 'enteties/Article';
+import { ArticleDetails, ArticleList } from 'enteties/Article';
 import { useNavigate, useParams } from 'react-router-dom';
-import Text from 'shared/ui/Text/Text';
+import Text, { TextSize } from 'shared/ui/Text/Text';
 import { CommentList } from 'enteties/Comment';
 import { ReducersList, useDynamicModuleLoad } from 'shared/lib/hooks/useDynamicModuleLoad/useDynamicModuleLoad';
 import { useSelector } from 'react-redux';
@@ -13,27 +13,37 @@ import { AddCommentForm } from 'features/addCommentForm';
 import Button, { ButtonTheme } from 'shared/ui/Button/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import PageLayout from 'widgets/PageLayout/PageLayout';
+import { getArticleRecommendationsIsLoading } from '../../model/selectors/recommendations';
+import {
+    fetchArticleRecommendations,
+} from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
-import { arcticleDetailsCommentsReducer, getArticleComments } from '../../model/slices/arcticleDetailsCommentsSlice';
+import { getArticleComments } from '../../model/slices/articleDetailsCommentsSlice';
 import styles from './ArcticleDetailsPage.module.scss';
+import {
+    getArticleRecomendations,
+} from '../../model/slices/articleDetailsRecommendationsSlice';
+import { articleDetailsPageReducer } from '../../model/slices';
 
-interface ArcticleDetailsPageProps {
+interface ArticleDetailsPageProps {
   className?: string;
 }
 const initialReducers: ReducersList = {
-    articleDetailsCommets: arcticleDetailsCommentsReducer,
+    articleDetailsPage: articleDetailsPageReducer,
 };
 
-const ArcticleDetailsPage = ({ className }: ArcticleDetailsPageProps) => {
+const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     const dynamicModule = useDynamicModuleLoad({
         reducers: initialReducers,
     });
     const { t } = useTranslation('article');
     const { id } = useParams<{id: string}>();
     const comments = useSelector(getArticleComments.selectAll);
+    const recommendations = useSelector(getArticleRecomendations.selectAll);
     const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
+    const recommendsIsLoading = useSelector(getArticleRecommendationsIsLoading);
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
 
@@ -47,6 +57,7 @@ const ArcticleDetailsPage = ({ className }: ArcticleDetailsPageProps) => {
 
     useInitialEffect(() => {
         dispatch(fetchCommentsByArticleId(id));
+        dispatch(fetchArticleRecommendations());
     });
 
     if (!id) {
@@ -64,7 +75,19 @@ const ArcticleDetailsPage = ({ className }: ArcticleDetailsPageProps) => {
             </Button>
             <ArticleDetails id={id} />
             <Text
+                title={t('Рекомендуем')}
+                size={TextSize.L}
+                className={styles.commentTitle}
+            />
+            <ArticleList
+                target="_blank"
+                articles={recommendations}
+                isLoading={recommendsIsLoading}
+                className={styles.recommendations}
+            />
+            <Text
                 title={t('Комментарии')}
+                size={TextSize.L}
                 className={styles.commentTitle}
             />
             <AddCommentForm
@@ -78,4 +101,4 @@ const ArcticleDetailsPage = ({ className }: ArcticleDetailsPageProps) => {
     );
 };
 
-export default memo(ArcticleDetailsPage);
+export default memo(ArticleDetailsPage);
