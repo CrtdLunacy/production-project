@@ -12,7 +12,7 @@ interface ArticleTypeTabsProps {
 
 export const ArticleTypeTabs = (props: ArticleTypeTabsProps) => {
     const { className, value, onChangeType } = props;
-    const { t } = useTranslation();
+    const { t } = useTranslation('article');
 
     const handleChangeType = useCallback((tab: TabItem) => {
         onChangeType(tab.value as ArticleType);
