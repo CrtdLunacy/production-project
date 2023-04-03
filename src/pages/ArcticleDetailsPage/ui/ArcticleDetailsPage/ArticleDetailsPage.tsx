@@ -13,6 +13,7 @@ import { AddCommentForm } from 'features/addCommentForm';
 import Button, { ButtonTheme } from 'shared/ui/Button/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import PageLayout from 'widgets/PageLayout/PageLayout';
+import ArticleDetailsPageHeader from 'pages/ArcticleDetailsPage/ui/ArcticleDetailsPageHeader/ArticleDetailsPageHeader';
 import { getArticleRecommendationsIsLoading } from '../../model/selectors/recommendations';
 import {
     fetchArticleRecommendations,
@@ -45,15 +46,10 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
     const recommendsIsLoading = useSelector(getArticleRecommendationsIsLoading);
     const dispatch = useAppDispatch();
-    const navigate = useNavigate();
 
     const handleSendComment = useCallback((text: string) => {
         dispatch(addCommentForArticle(text));
     }, [dispatch]);
-
-    const handleBackToList = useCallback(() => {
-        navigate(RoutePath.articles);
-    }, [navigate]);
 
     useInitialEffect(() => {
         dispatch(fetchCommentsByArticleId(id));
@@ -70,9 +66,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
 
     return (
         <PageLayout className={classNames(styles.ArcticleDetailsPage, {}, [className])}>
-            <Button onClick={handleBackToList} theme={ButtonTheme.OUTLINE}>
-                {t('Назад к списку')}
-            </Button>
+            <ArticleDetailsPageHeader />
             <ArticleDetails id={id} />
             <Text
                 title={t('Рекомендуем')}

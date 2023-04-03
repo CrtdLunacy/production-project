@@ -17,7 +17,7 @@ import {
     getArticlePageIsLoading,
     getArticlePageView,
 } from '../../model/selectors/articlePageSelectors';
-import { articlesPageActions, articlesPageReducer, getArticles } from '../../model/slices/articlesPageSlice';
+import { articlesPageReducer, getArticles } from '../../model/slices/articlesPageSlice';
 import styles from './ArcticlesPage.module.scss';
 
 interface ArcticlesPageProps {

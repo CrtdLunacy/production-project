@@ -14,5 +14,7 @@
   "Введите имя пользователя": "Username",
   "Введите пароль": "Password",
   "Форма авторизации": "Authorization form",
-  "Ошибка авторизации": "You have entered incorrect login details"
+  "Ошибка авторизации": "You have entered incorrect login details",
+  "Lunacy News": "Lunacy News",
+  "Создать статью": "Create article"
 }
