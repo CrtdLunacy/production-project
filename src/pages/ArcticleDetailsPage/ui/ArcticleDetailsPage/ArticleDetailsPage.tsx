@@ -2,7 +2,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 import { ArticleDetails, ArticleList } from 'enteties/Article';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import Text, { TextSize } from 'shared/ui/Text/Text';
 import { CommentList } from 'enteties/Comment';
 import { ReducersList, useDynamicModuleLoad } from 'shared/lib/hooks/useDynamicModuleLoad/useDynamicModuleLoad';
@@ -10,10 +10,9 @@ import { useSelector } from 'react-redux';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { AddCommentForm } from 'features/addCommentForm';
-import Button, { ButtonTheme } from 'shared/ui/Button/Button';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import PageLayout from 'widgets/PageLayout/PageLayout';
-import ArticleDetailsPageHeader from 'pages/ArcticleDetailsPage/ui/ArcticleDetailsPageHeader/ArticleDetailsPageHeader';
+import { VStack } from 'shared/ui/Stack';
+import ArticleDetailsPageHeader from '../ArcticleDetailsPageHeader/ArticleDetailsPageHeader';
 import { getArticleRecommendationsIsLoading } from '../../model/selectors/recommendations';
 import {
     fetchArticleRecommendations,
@@ -59,38 +58,40 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     if (!id) {
         return (
             <PageLayout className={classNames(styles.ArcticleDetailsPage, {}, [className])}>
-                {t('Статья отсутствует')}
+                <VStack max gap="16">
+                    {t('Статья отсутствует')}
+                </VStack>
             </PageLayout>
         );
     }
 
     return (
         <PageLayout className={classNames(styles.ArcticleDetailsPage, {}, [className])}>
-            <ArticleDetailsPageHeader />
-            <ArticleDetails id={id} />
-            <Text
-                title={t('Рекомендуем')}
-                size={TextSize.L}
-                className={styles.commentTitle}
-            />
-            <ArticleList
-                target="_blank"
-                articles={recommendations}
-                isLoading={recommendsIsLoading}
-                className={styles.recommendations}
-            />
-            <Text
-                title={t('Комментарии')}
-                size={TextSize.L}
-                className={styles.commentTitle}
-            />
-            <AddCommentForm
-                onSendComment={handleSendComment}
-            />
-            <CommentList
-                isLoading={commentsIsLoading}
-                comments={comments}
-            />
+            <VStack max gap="16">
+                <ArticleDetailsPageHeader />
+                <ArticleDetails id={id} />
+                <Text
+                    title={t('Рекомендуем')}
+                    size={TextSize.L}
+                />
+                <ArticleList
+                    target="_blank"
+                    articles={recommendations}
+                    isLoading={recommendsIsLoading}
+                    className={styles.recommendations}
+                />
+                <Text
+                    title={t('Комментарии')}
+                    size={TextSize.L}
+                />
+                <AddCommentForm
+                    onSendComment={handleSendComment}
+                />
+                <CommentList
+                    isLoading={commentsIsLoading}
+                    comments={comments}
+                />
+            </VStack>
         </PageLayout>
     );
 };

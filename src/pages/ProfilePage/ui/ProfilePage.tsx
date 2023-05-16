@@ -22,6 +22,7 @@ import { ValidateProfileError } from 'enteties/Profile/model/types/profile';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useParams } from 'react-router-dom';
 import PageLayout from 'widgets/PageLayout/PageLayout';
+import { VStack } from 'shared/ui/Stack/VStack/VStack';
 import ProfilePageHeader from './ProfilePageHeader/ProfilePageHeader';
 
 interface ProfilePageProps {
@@ -96,24 +97,26 @@ const ProfilePage = memo(({ className }: ProfilePageProps) => {
 
     return (
         <PageLayout className={classNames('', {}, [className])}>
-            <ProfilePageHeader />
-            {validateErrors?.length && validateErrors.map((e) => (
-                <Text key={e} theme={TextTheme.ERROR} text={validateErrorTranslate[e]} />
-            ))}
-            <ProfileCard
-                data={form}
-                isLoading={isLoading}
-                error={error}
-                onChangeFirst={handleChangeFirstName}
-                onChangeLast={handleChangeLastName}
-                onChangeAge={handleChangeAge}
-                onChangeCity={handleChangeCity}
-                onChangeUsername={handleChangeUsername}
-                onChangeAvatar={handleChangeAvatar}
-                onChangeCurrency={handleChangeCurrency}
-                onChangeCountry={handleChangeCountry}
-                readonly={readonly}
-            />
+            <VStack max gap="16">
+                <ProfilePageHeader />
+                {validateErrors?.length && validateErrors.map((e) => (
+                    <Text key={e} theme={TextTheme.ERROR} text={validateErrorTranslate[e]} />
+                ))}
+                <ProfileCard
+                    data={form}
+                    isLoading={isLoading}
+                    error={error}
+                    onChangeFirst={handleChangeFirstName}
+                    onChangeLast={handleChangeLastName}
+                    onChangeAge={handleChangeAge}
+                    onChangeCity={handleChangeCity}
+                    onChangeUsername={handleChangeUsername}
+                    onChangeAvatar={handleChangeAvatar}
+                    onChangeCurrency={handleChangeCurrency}
+                    onChangeCountry={handleChangeCountry}
+                    readonly={readonly}
+                />
+            </VStack>
         </PageLayout>
     );
 });

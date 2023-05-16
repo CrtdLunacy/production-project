@@ -1,8 +1,8 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import Text, { TextTheme } from 'shared/ui/Text/Text';
+import Text, { TextSize, TextTheme } from './Text';
 
 export default {
     title: 'shared/Text',
@@ -43,4 +43,18 @@ Error.args = {
     text: 'Dark',
     title: 'Dark',
     theme: TextTheme.ERROR,
+};
+
+export const SizeM = Template.bind({});
+SizeM.args = {
+    text: 'SizeM',
+    title: 'SizeM',
+    size: TextSize.M,
+};
+
+export const SizeXL = Template.bind({});
+SizeXL.args = {
+    text: 'SizeXL',
+    title: 'SizeXL',
+    size: TextSize.XL,
 };

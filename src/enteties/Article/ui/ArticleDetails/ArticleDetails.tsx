@@ -1,5 +1,5 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { memo, useCallback, useEffect } from 'react';
+import { memo, useEffect } from 'react';
 import { ReducersList, useDynamicModuleLoad } from 'shared/lib/hooks/useDynamicModuleLoad/useDynamicModuleLoad';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
@@ -9,6 +9,7 @@ import Avatar from 'shared/ui/Avatar/Avatar';
 import EyeIcon from 'shared/assets/icons/eyesight.svg';
 import CalendarIcon from 'shared/assets/icons/calendar.svg';
 import Icon from 'shared/ui/Icon/Icon';
+import { HStack, VStack } from 'shared/ui/Stack';
 import ArticleTextBlockComponent
     from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import ArticleImageBlockComponent
@@ -83,13 +84,13 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
     } else {
         content = (
             <>
-                <div className={styles.avatarWrapper}>
+                <HStack max justify="center">
                     <Avatar
                         size={200}
                         src={data?.img}
                         className={styles.avatar}
                     />
-                </div>
+                </HStack>
                 <Text
                     theme={TextTheme.PRIMARY}
                     title={data?.title}
@@ -97,24 +98,22 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
                     size={TextSize.L}
                     className={styles.title}
                 />
-                <div className={styles.articleInfo}>
-                    <Icon Svg={EyeIcon} className={styles.icon} />
-                    {/* <EyeIcon className={styles.icon} /> */}
+                <HStack gap="10">
+                    <Icon Svg={EyeIcon} />
                     <Text text={String(data?.views)} />
-                </div>
-                <div className={styles.articleInfo}>
-                    <Icon Svg={CalendarIcon} className={styles.icon} />
-                    {/* <CalendarIcon className={styles.icon} /> */}
+                </HStack>
+                <HStack gap="10">
+                    <Icon Svg={CalendarIcon} />
                     <Text text={data?.createdAt} />
-                </div>
+                </HStack>
                 {data?.blocks.map(renderBlock)}
             </>
         );
     }
 
     return (
-        <div className={classNames(styles.ArticleDetails, {}, [className])}>
+        <VStack max gap="16" className={classNames(styles.ArticleDetails, {}, [className])}>
             {content}
-        </div>
+        </VStack>
     );
 });

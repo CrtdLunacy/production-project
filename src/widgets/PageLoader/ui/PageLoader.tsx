@@ -7,10 +7,8 @@ interface PageLoaderProps {
   className?: string
 }
 
-const PageLoader = memo(({ className }: PageLoaderProps) => (
+export const PageLoader = memo(({ className }: PageLoaderProps) => (
     <div className={classNames(styles.PageLoader, {}, [className])}>
         <Loader />
     </div>
 ));
-
-export default PageLoader;

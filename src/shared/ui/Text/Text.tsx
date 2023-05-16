@@ -30,6 +30,15 @@ interface TextProps {
   size?: TextSize;
 }
 
+type HeaderTagType = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+
+const mapSizeToHeaderTag: Record<TextSize, HeaderTagType> = {
+    [TextSize.S]: 'h4',
+    [TextSize.M]: 'h3',
+    [TextSize.L]: 'h2',
+    [TextSize.XL]: 'h1',
+};
+
 const Text: FC<TextProps> = memo((props: TextProps) => {
     const {
         className,
@@ -40,6 +49,8 @@ const Text: FC<TextProps> = memo((props: TextProps) => {
         size = TextSize.M,
     } = props;
 
+    const HeaderTag = mapSizeToHeaderTag[size];
+
     const mods: Mods = {
         [styles[align]]: true,
         [styles[size]]: true,
@@ -47,7 +58,7 @@ const Text: FC<TextProps> = memo((props: TextProps) => {
 
     return (
         <div className={classNames(styles.Text, mods, [className, styles[theme]])}>
-            {title && <p className={styles.title}>{title}</p>}
+            {title && <HeaderTag className={styles.title}>{title}</HeaderTag>}
             {text && <p className={styles.text}>{text}</p>}
         </div>
     );

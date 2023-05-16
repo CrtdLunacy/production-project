@@ -1,15 +1,15 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
-import { ArticleList, ArticleView } from 'enteties/Article';
+import { ArticleList } from 'enteties/Article';
 import { ReducersList, useDynamicModuleLoad } from 'shared/lib/hooks/useDynamicModuleLoad/useDynamicModuleLoad';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
 import PageLayout from 'widgets/PageLayout/PageLayout';
 import Text, { TextTheme } from 'shared/ui/Text/Text';
-import ArticleFilters from 'pages/ArcticlesPage/ui/ArticleFilters/ArticleFilters';
 import { useSearchParams } from 'react-router-dom';
+import ArticleFilters from '../ArticleFilters/ArticleFilters';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticles/fetchNextArticlesPage';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import {

@@ -14,7 +14,7 @@ interface NavbarProps {
   className?: string;
 }
 
-const NavBar = memo(({ className }: NavbarProps) => {
+export const NavBar = memo(({ className }: NavbarProps) => {
     const { t } = useTranslation();
     const [isAuthModal, setIsAuthModal] = useState(false);
     const AuthData = useSelector(getUserAuthData);
@@ -78,5 +78,3 @@ const NavBar = memo(({ className }: NavbarProps) => {
         </header>
     );
 });
-
-export default NavBar;

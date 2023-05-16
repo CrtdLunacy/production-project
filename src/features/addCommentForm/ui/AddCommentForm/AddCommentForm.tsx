@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux';
 import { memo, useCallback } from 'react';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { ReducersList, useDynamicModuleLoad } from 'shared/lib/hooks/useDynamicModuleLoad/useDynamicModuleLoad';
+import { HStack } from 'shared/ui/Stack';
 import {
     getAddCommentFormText,
 } from '../../model/selectors/addCommentFormSelectors';
@@ -40,7 +41,7 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
     }, [handleCommentText, onSendComment, text]);
 
     return (
-        <div className={classNames(styles.AddCommentForm, {}, [className])}>
+        <HStack max justify="between" className={classNames(styles.AddCommentForm, {}, [className])}>
             <Input
                 className={styles.input}
                 placeholder={t('Текст комментария')}
@@ -53,7 +54,7 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
             >
                 {t('Отправить')}
             </Button>
-        </div>
+        </HStack>
     );
 });
 

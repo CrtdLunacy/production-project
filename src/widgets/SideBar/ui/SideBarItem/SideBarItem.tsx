@@ -4,7 +4,7 @@ import AppLink, { AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import React, { memo } from 'react';
 import { useSelector } from 'react-redux';
 import { getUserAuthData } from 'enteties/User';
-import { ISideBarItem } from 'widgets/SideBar/model/types/sidebar';
+import { ISideBarItem } from '../../model/types/sidebar';
 import styles from './SideBarItem.module.scss';
 
 interface SideBarItemProps {

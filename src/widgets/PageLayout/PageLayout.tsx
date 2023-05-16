@@ -46,14 +46,14 @@ const PageLayout = (props: PageLayoutProps) => {
     }, 2000);
 
     return (
-        <section
+        <main
             ref={wrapperRef}
             className={classNames(styles.PageLayout, {}, [className])}
             onScroll={handleScroll}
         >
             {children}
             {onScrollEnd ? <div className={styles.trigger} ref={triggerRef} /> : null}
-        </section>
+        </main>
     );
 };
 

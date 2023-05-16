@@ -5,6 +5,7 @@ import Text from 'shared/ui/Text/Text';
 import SkeletonLoader from 'shared/ui/SkeletonLoader/SkeletonLoader';
 import AppLink from 'shared/ui/AppLink/AppLink';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { VStack } from 'shared/ui/Stack';
 import styles from './CommentCard.module.scss';
 
 interface CommentCardProps {
@@ -21,13 +22,13 @@ const CommentCard = (props: CommentCardProps) => {
 
     if (isLoading) {
         return (
-            <div className={classNames(styles.CommentCard, {}, [className, styles.loading])}>
+            <VStack gap="10" max className={classNames(styles.CommentCard, {}, [className, styles.loading])}>
                 <div className={styles.header}>
                     <SkeletonLoader height={30} width={30} border="50%" />
                     <SkeletonLoader className={styles.username} height={16} width={100} />
                 </div>
-                <SkeletonLoader className={styles.text} width="100%" height={50} />
-            </div>
+                <SkeletonLoader width="100%" height={50} />
+            </VStack>
         );
     }
 
@@ -36,7 +37,7 @@ const CommentCard = (props: CommentCardProps) => {
     }
 
     return (
-        <div className={classNames(styles.CommentCard, {}, [className])}>
+        <VStack max gap="10" className={classNames(styles.CommentCard, {}, [className])}>
             <AppLink to={`${RoutePath.profile}${comment.user.id}`} className={styles.header}>
                 <Avatar
                     size={30}
@@ -44,8 +45,8 @@ const CommentCard = (props: CommentCardProps) => {
                 />
                 <Text className={styles.username} title={comment.user.username} />
             </AppLink>
-            <Text className={styles.text} text={comment.text} />
-        </div>
+            <Text text={comment.text} />
+        </VStack>
     );
 };
 

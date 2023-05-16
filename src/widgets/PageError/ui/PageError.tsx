@@ -7,7 +7,7 @@ interface PageErrorProps {
   className?: string
 }
 
-const PageError = ({ className }: PageErrorProps) => {
+export const PageError = ({ className }: PageErrorProps) => {
     const { t } = useTranslation();
 
     const reloadPage = () => {
@@ -23,5 +23,3 @@ const PageError = ({ className }: PageErrorProps) => {
         </div>
     );
 };
-
-export default PageError;
