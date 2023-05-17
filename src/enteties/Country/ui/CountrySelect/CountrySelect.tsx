@@ -4,6 +4,7 @@ import Select from 'shared/ui/Select/Select';
 import { memo, useCallback, useMemo } from 'react';
 import { Currency } from 'enteties/Currency';
 import { Country } from 'enteties/Country/model/types/country';
+import { ListBox } from 'shared/ui/ListBox/ListBox';
 
 interface CountrySelectProps {
   className?: string;
@@ -24,13 +25,15 @@ export const CountrySelect = memo((props: CountrySelectProps) => {
     }, [onChange]);
 
     return (
-        <Select
+        <ListBox
             onChange={handleChange}
             value={value}
+            items={countryOptions}
             className={classNames('', {}, [className])}
-            label={t('Страна')}
-            options={countryOptions}
+            defaultValue={t('Укажите страну')}
             readonly={readonly}
+            direction="top"
+            label={t('Страна')}
         />
     );
 });

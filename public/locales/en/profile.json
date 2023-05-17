@@ -15,5 +15,9 @@
   "Ошибка города": "Invalid city",
   "Ошибка фио": "Invalid name or lastname",
   "Ошибка отсутствия данных": "Invalid data, try to reload page",
-  "Ошибка возраста": "Invalid age"
+  "Ошибка возраста": "Invalid age",
+  "Укажите валюту": "Choose currency",
+  "Укажите страну": "Choose country",
+  "Страна": "Country",
+  "Валюта": "Currency"
 }
