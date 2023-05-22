@@ -3,7 +3,7 @@ import { MainPage } from 'pages/MainPage';
 import { RouteProps } from 'react-router-dom';
 import { NotFoundPage } from 'pages/NotFoundPage';
 import { ProfilePage } from 'pages/ProfilePage';
-import { ArticlesPage } from 'pages/ArcticlesPage';
+import { ArticlesPage } from 'pages/ArticlesPage';
 import { ArticleDetailsPage } from 'pages/ArcticleDetailsPage';
 import { ArticleEditPage } from 'pages/ArticleEditPage';
 

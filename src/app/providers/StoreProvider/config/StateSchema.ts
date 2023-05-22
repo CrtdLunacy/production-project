@@ -3,25 +3,28 @@ import { LoginSchema } from 'features/AuthByUsername';
 import {
     AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
-import { ProfileSchema } from 'enteties/Profile';
 import { AxiosInstance } from 'axios';
 import { ArticleDetailsSchema } from 'enteties/Article';
 import { addCommentFormSchema } from 'features/addCommentForm';
-import { ArticlePageSchema } from 'pages/ArcticlesPage';
+import { ArticlePageSchema } from 'pages/ArticlesPage';
 import { SaveScrollPositionSchema } from 'features/SaveScrollPosition';
 import { ArticleDetailsPageSchema } from 'pages/ArcticleDetailsPage';
+import { rtkApi } from 'shared/api/rtkApi';
+import { EditableProfileCardSchema } from 'features/editableProfileCard';
 
 export interface StateSchema {
     user: UserSchema;
     scrollPosition: SaveScrollPositionSchema;
+    [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
 
     // Асинхронные редюсеры
     loginForm?: LoginSchema;
-    profile?: ProfileSchema;
+    profile?: EditableProfileCardSchema;
     articleDetails?: ArticleDetailsSchema;
     addCommentForm?: addCommentFormSchema;
     articlesPage?: ArticlePageSchema;
     articleDetailsPage?: ArticleDetailsPageSchema;
+
 }
 export type StateSchemaKey = keyof StateSchema;
 export type MountedReducers = OptionalRecord<StateSchemaKey, boolean>;
