@@ -1,5 +1,4 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 import { ReducersList, useDynamicModuleLoad } from 'shared/lib/hooks/useDynamicModuleLoad/useDynamicModuleLoad';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
@@ -24,7 +23,6 @@ const initialReducers: ReducersList = {
 };
 
 const ArticlesPage = ({ className }: ArticlesPageProps) => {
-    const { t } = useTranslation('article');
     const dispatch = useAppDispatch();
     const error = useSelector(getArticlePageError);
     const dynamicModule = useDynamicModuleLoad({

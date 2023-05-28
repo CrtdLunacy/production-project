@@ -7,7 +7,7 @@ import Card from 'shared/ui/Card/Card';
 import Avatar from 'shared/ui/Avatar/Avatar';
 import Button, { ButtonTheme } from 'shared/ui/Button/Button';
 import { HTMLAttributeAnchorTarget, memo, useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import AppLink from 'shared/ui/AppLink/AppLink';
 import App from 'app/App';
@@ -48,8 +48,10 @@ const ArticleListItem = memo((props: ArticleListItemProps) => {
             <div className={classNames(styles.ArticleListItem, {}, [className, styles[view]])}>
                 <Card>
                     <div className={styles.header}>
-                        <Avatar size={30} src={article.user.avatar} alt={article.user.username} />
-                        <Text text={article.user.username} className={styles.username} />
+                        <AppLink to={RoutePath.profile + article.user.id} className={styles.link}>
+                            <Avatar size={30} src={article.user.avatar} alt={article.user.username} />
+                            <Text text={article.user.username} className={styles.username} />
+                        </AppLink>
                         <Text text={article.createdAt} className={styles.date} />
                     </div>
                     <Text text={article.title} className={styles.title} />

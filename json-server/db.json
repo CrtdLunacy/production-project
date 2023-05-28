@@ -1314,15 +1314,28 @@
       "id": "1",
       "username": "SkinnyGirl666",
       "password": "123",
-      "role": "ADMIN",
-      "avatar": "https://symbolikon.com/wp-content/uploads/edd/2022/09/Marden-bold-.png"
+      "roles": [
+        "ADMIN"
+      ],
+      "avatar": "https://img.freepik.com/premium-photo/sute-girl-hacker-with-laptop-avatar-cartoon-style-black-background-generated-ai_88188-3328.jpg?size=338&ext=jpg"
     },
     {
       "id": "2",
+      "username": "Test",
+      "password": "Test123",
+      "roles": [
+        "MODERATOR"
+      ],
+      "avatar": "https://preview.redd.it/8wmdwewolpm91.png?width=640&crop=smart&auto=webp&s=00445e0aa8ae46f601d70cc9626c23e0cb4842d8"
+    },
+    {
+      "id": "3",
       "username": "PoorUser123",
       "password": "123",
-      "role": "USER",
-      "avatar": "https://cdn4.iconfinder.com/data/icons/space-and-astronaut/128/9-512.png"
+      "roles": [
+        "USER"
+      ],
+      "avatar": "https://images.secretlab.co/theme/common/collab_pokemon_catalog_charizard-min.png"
     }
   ],
   "profile": [
@@ -1339,6 +1352,17 @@
     },
     {
       "id": "2",
+      "first": "Test",
+      "lastname": "Testovich",
+      "age": 121,
+      "currency": "EUR",
+      "country": "Armenia",
+      "city": "Ереван",
+      "username": "Test",
+      "avatar": "https://preview.redd.it/8wmdwewolpm91.png?width=640&crop=smart&auto=webp&s=00445e0aa8ae46f601d70cc9626c23e0cb4842d8"
+    },
+    {
+      "id": "3",
       "first": "Покемон",
       "lastname": "Покемонов",
       "age": 29,
