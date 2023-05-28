@@ -4,7 +4,6 @@ import { Profile } from 'enteties/Profile';
 import { Currency } from 'enteties/Currency';
 import { Country } from 'enteties/Country';
 import userEvent from '@testing-library/user-event';
-import { use } from 'i18next';
 import { $api } from 'shared/api/api';
 import { profileReducer } from '../../model/slice/profileSlice';
 import { EditableProfileCard } from './editableProfileCard';
