@@ -1307,6 +1307,12 @@
       "userId": "1",
       "text": "New comment",
       "id": "bvkKTXR"
+    },
+    {
+      "articleId": "1",
+      "userId": "3",
+      "text": "New comment 2",
+      "id": "ki8GOSh"
     }
   ],
   "users": [

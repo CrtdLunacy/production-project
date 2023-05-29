@@ -91,10 +91,16 @@ export const Light = Template.bind({});
 Light.args = {
 };
 Light.decorators = [StoreDecorator({
+    articleDetails: {
+        data: article,
+    },
 })];
 
 export const Dark = Template.bind({});
 Dark.args = {
 };
 Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
+    articleDetails: {
+        data: article,
+    },
 })];

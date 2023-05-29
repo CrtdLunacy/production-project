@@ -26,23 +26,13 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     const { t } = useTranslation('article');
     const { id } = useParams<{id: string}>();
 
-    if (!id) {
-        return (
-            <PageLayout className={classNames(styles.ArcticleDetailsPage, {}, [className])}>
-                <VStack max gap="16">
-                    {t('Статья отсутствует')}
-                </VStack>
-            </PageLayout>
-        );
-    }
-
     return (
         <PageLayout className={classNames(styles.ArcticleDetailsPage, {}, [className])}>
             <VStack max gap="16">
                 <ArticleDetailsPageHeader />
-                <ArticleDetails id={id} />
+                <ArticleDetails id={id!} />
                 <ArticleRecommendationsList />
-                <ArticleDetailsComments id={id} />
+                <ArticleDetailsComments id={id!} />
             </VStack>
         </PageLayout>
     );
