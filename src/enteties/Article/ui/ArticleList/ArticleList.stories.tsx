@@ -1,10 +1,9 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import ArticleListItemSkeleton from 'enteties/Article/ui/ArticleListItem/ArticleListItemSkeleton';
-import styles from 'enteties/Article/ui/ArticleList/ArticleList.module.scss';
-import { Article, ArticleView } from '../../model/types/article';
+import { Article } from '../../model/types/article';
 import { ArticleList } from './ArticleList';
+import { ArticleView } from '../../model/const/const';
 
 export default {
     title: 'enteties/ArticleList',

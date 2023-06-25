@@ -4,8 +4,9 @@ import ArticleListItem from 'enteties/Article/ui/ArticleListItem/ArticleListItem
 import ArticleListItemSkeleton from 'enteties/Article/ui/ArticleListItem/ArticleListItemSkeleton';
 import Text from 'shared/ui/Text/Text';
 import { HTMLAttributeAnchorTarget } from 'react';
-import { Article, ArticleView } from '../../model/types/article';
+import { Article } from '../../model/types/article';
 import styles from './ArticleList.module.scss';
+import { ArticleView } from '../../model/const/const';
 
 interface ArticleListProps {
   className?: string;

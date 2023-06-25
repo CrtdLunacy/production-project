@@ -9,15 +9,14 @@ import Button, { ButtonTheme } from 'shared/ui/Button/Button';
 import {
     HTMLAttributeAnchorTarget, memo, ReactNode, useCallback,
 } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import AppLink from 'shared/ui/AppLink/AppLink';
-import App from 'app/App';
 import ArticleTextBlockComponent from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import {
-    Article, ArticleBlockType, ArticleTextBlock, ArticleView,
+    Article, ArticleTextBlock,
 } from '../../model/types/article';
 import styles from './ArticleListItem.module.scss';
+import { ArticleBlockType, ArticleView } from '../../model/const/const';
 
 interface ArticleListItemProps {
   className?: string;
