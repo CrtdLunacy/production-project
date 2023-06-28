@@ -2,7 +2,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { NavBar } from 'widgets/NavBar';
 import { useTheme } from 'app/providers/ThemeProvider';
 import { SideBar } from 'widgets/SideBar';
-import { Suspense, useEffect, useState } from 'react';
+import { Suspense, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserMounted, userActions } from 'enteties/User';
 import { AppRouter } from './providers/router';
@@ -18,7 +18,7 @@ function App() {
 
     return (
         <div className={classNames('app', {}, [])}>
-            <Suspense fallback="">
+            <Suspense fallback="Загрузка...">
                 <NavBar />
                 <div className="content-page">
                     <SideBar />
