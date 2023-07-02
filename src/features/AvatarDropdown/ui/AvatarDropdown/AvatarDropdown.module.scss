@@ -1,0 +1,13 @@
+.trigger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 50%;
+  border-style: none;
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness(1.5);
+  }
+}

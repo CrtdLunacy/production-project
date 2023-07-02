@@ -1,0 +1,31 @@
+.options {
+    background: var(--card-bg);
+    position: absolute;
+    z-index: 100;
+    box-shadow: 4px 4px 8px var(--bg-color);
+    min-width: 100%;
+}
+
+.checkIcon {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 40%;
+    left: 5px;
+    fill: var(--bg-color);
+}
+
+.label {
+    color: var(--primary-color);
+}
+
+.item {
+    padding: 10px 20px;
+    cursor: pointer;
+    position: relative;
+
+    &:hover {
+        color: var(--bg-color);
+        background-color: var(--primary-color);
+    }
+}

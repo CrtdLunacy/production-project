@@ -2,8 +2,10 @@ import { Menu } from '@headlessui/react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Fragment, ReactNode } from 'react';
 import { DropdownDirection } from 'shared/types/ui';
-import AppLink from '../../ui/AppLink/AppLink';
+import { mapDirectionClasses } from '../../styles/consts';
+import AppLink from '../../../AppLink/AppLink';
 import styles from './Dropdown.module.scss';
+import popupStyles from '../../styles/popup.module.scss';
 
 export interface DropdownItem {
     disabled?: boolean;
@@ -21,13 +23,6 @@ interface DropdownProps {
 
 }
 
-const mapDirectionClasses: Record<DropdownDirection, string> = {
-    'bottom left': styles.optionBottomLeft,
-    'bottom right': styles.optionBottomRight,
-    'top left': styles.optionTopLeft,
-    'top right': styles.optionTopRight,
-};
-
 export function Dropdown(props: DropdownProps) {
     const {
         className,
@@ -38,8 +33,8 @@ export function Dropdown(props: DropdownProps) {
     } = props;
 
     return (
-        <Menu as="div" className={classNames(styles.Dropdown, {}, [className])}>
-            <Menu.Button className={classNames(styles.btn, {}, [triggerStyle])}>{trigger}</Menu.Button>
+        <Menu as="div" className={classNames(styles.Dropdown, {}, [className, popupStyles.popup])}>
+            <Menu.Button className={classNames(popupStyles.btn, {}, [triggerStyle])}>{trigger}</Menu.Button>
             <Menu.Items className={classNames(styles.menu, {}, [mapDirectionClasses[direction]])}>
                 {items.map((item, index) => {
                     const content = ({ active }: {active: boolean}) => (
@@ -47,7 +42,7 @@ export function Dropdown(props: DropdownProps) {
                             type="button"
                             disabled={item.disabled}
                             onClick={item.onClick}
-                            className={classNames(styles.item, { [styles.active]: active }, [])}
+                            className={classNames(styles.item, { [popupStyles.active]: active }, [])}
                         >
                             {item.content}
                         </button>

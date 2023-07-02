@@ -1,0 +1,9 @@
+.popover > div {
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+.notifications {
+  min-height: 150px;
+  max-height: 350px;
+  width: 500px;
+  overflow-y: auto;
+}

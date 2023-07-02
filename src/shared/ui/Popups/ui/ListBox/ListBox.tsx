@@ -3,10 +3,12 @@ import { Listbox as HListBox } from '@headlessui/react';
 import Check from 'shared/assets/icons/checkMark.svg';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { DropdownDirection } from 'shared/types/ui';
-import Icon from '../../ui/Icon/Icon';
-import { HStack } from '../../ui/Stack';
-import Button from '../../ui/Button/Button';
+import { mapDirectionClasses } from '../../styles/consts';
+import Icon from '../../../Icon/Icon';
+import { HStack } from '../../../Stack';
+import Button from '../../../Button/Button';
 import styles from './ListBox.module.scss';
+import popupStyles from '../../styles/popup.module.scss';
 
 export interface ListBoxItem {
     value: string;
@@ -24,14 +26,6 @@ interface ListBoxProps {
     direction: DropdownDirection;
     label?: string;
 }
-
-const mapDirectionClasses: Record<DropdownDirection, string> = {
-    'bottom left': styles.optionBottomLeft,
-    'bottom right': styles.optionBottomRight,
-    'top left': styles.optionTopLeft,
-    'top right': styles.optionTopRight,
-};
-
 export function ListBox(props: ListBoxProps) {
     const {
         items,
@@ -49,12 +43,12 @@ export function ListBox(props: ListBoxProps) {
             {label && <span className={styles.label}>{label}</span>}
             <HListBox
                 as="div"
-                className={classNames(styles.ListBox, { [styles.disabled]: readonly }, [className])}
+                className={classNames(styles.ListBox, { [styles.disabled]: readonly }, [className, popupStyles.popup])}
                 value={value}
                 onChange={onChange}
                 disabled={readonly}
             >
-                <HListBox.Button className={styles.trigger}>
+                <HListBox.Button className={popupStyles.trigger}>
                     <Button disabled={readonly}>
                         {value ?? defaultValue}
                     </Button>
@@ -72,8 +66,8 @@ export function ListBox(props: ListBoxProps) {
                                     className={classNames(
                                         styles.item,
                                         {
-                                            [styles.active]: active,
-                                            [styles.disabled]: item.disabled,
+                                            [popupStyles.active]: active,
+                                            [popupStyles.disabled]: item.disabled,
                                         },
                                         [],
                                     )}

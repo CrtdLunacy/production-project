@@ -4,7 +4,7 @@ import Select from 'shared/ui/Select/Select';
 import { memo, useCallback, useMemo } from 'react';
 import { Currency } from 'enteties/Currency';
 import { Country } from 'enteties/Country/model/types/country';
-import { ListBox } from 'shared/ui/ListBox/ListBox';
+import { ListBox } from 'shared/ui/Popups/ui/ListBox/ListBox';
 
 interface CountrySelectProps {
   className?: string;
