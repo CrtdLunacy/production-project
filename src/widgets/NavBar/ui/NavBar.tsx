@@ -3,18 +3,17 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import Button, { ButtonTheme } from 'shared/ui/Button/Button';
 import { LoginModal } from 'features/AuthByUsername';
-import { useDispatch, useSelector } from 'react-redux';
-import {
-    getUserAuthData, isUserAdmin, isUserModerator, userActions,
-} from 'enteties/User';
+import { useSelector } from 'react-redux';
+import { getUserAuthData } from 'enteties/User';
 import Text, { TextTheme } from 'shared/ui/Text/Text';
 import AppLink, { AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import { Dropdown } from 'shared/ui/Popups/ui/Dropdown/Dropdown';
-import Avatar from 'shared/ui/Avatar/Avatar';
 import { HStack } from 'shared/ui/Stack';
 import { NotificationButton } from 'features/NotificationButton';
 import { AvatarDropdown } from 'features/AvatarDropdown';
+import { Drawer } from 'shared/ui/Drawer/Drawer';
+import { NotificationList } from 'enteties/Notification';
+import { useDevice } from 'shared/lib/hooks/useDevice/useDevice';
 import styles from './NavBar.module.scss';
 
 interface NavbarProps {
@@ -51,6 +50,7 @@ export const NavBar = memo(({ className }: NavbarProps) => {
                 </AppLink>
 
                 <HStack gap="16">
+
                     <NotificationButton />
                     <AvatarDropdown />
                 </HStack>

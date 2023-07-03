@@ -1,6 +1,5 @@
 import {
-    MutableRefObject,
-    ReactNode, RefObject, useEffect, useRef, useState,
+    ReactNode, useEffect, useRef, useState,
 } from 'react';
 import { createPortal } from 'react-dom';
 

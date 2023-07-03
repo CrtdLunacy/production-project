@@ -3,6 +3,7 @@ import {
     MouseEvent, MutableRefObject, ReactNode, useCallback, useEffect, useRef, useState,
 } from 'react';
 import { useTheme } from 'app/providers/ThemeProvider';
+import { Overlay } from '../Overlay/Overlay';
 import Portal from '../Portal/Portal';
 import styles from './Modal.module.scss';
 
@@ -55,21 +56,16 @@ const Modal = (props: ModalProps) => {
         };
     }, [isOpen, onKeyDown]);
 
-    const onContentClick = (e: MouseEvent) => {
-        e.stopPropagation();
-    };
-
     if (!isOpen) {
         return null;
     }
 
     return (
         <Portal>
-            <div className={classNames(styles.Modal, mods, [className])}>
-                <div className={styles.overlay} onClick={closeHandler}>
-                    <div className={styles.content} onClick={onContentClick}>
-                        {children}
-                    </div>
+            <div className={classNames(styles.Modal, mods, [className, theme])}>
+                <Overlay onClick={closeHandler} />
+                <div className={styles.content}>
+                    {children}
                 </div>
             </div>
         </Portal>
