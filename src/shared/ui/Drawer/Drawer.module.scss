@@ -46,8 +46,35 @@
     pointer-events: auto;
     opacity: 1;
     z-index: var(--modal-z-index);
+    animation: close-modal 0.5s 1 forwards;
 
     .content {
+        animation: open-drawer 0.5s 1 forwards;
+    }
+}
+
+.closed {
+    .content {
+        animation: close-drawer 0.5s 1 forwards;
+    }
+}
+
+@keyframes open-drawer {
+    0% {
+        transform: translateY(125%);
+    }
+
+    100% {
         transform: translateY(22%);
+    }
+}
+
+@keyframes close-drawer {
+    0% {
+        transform: translateY(22%);
+    }
+
+    100% {
+        transform: translateY(125%);
     }
 }
