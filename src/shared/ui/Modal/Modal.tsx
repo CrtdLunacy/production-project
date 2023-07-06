@@ -1,7 +1,5 @@
 import { classNames, Mods } from 'shared/lib/classNames/classNames';
-import {
-    MutableRefObject, ReactNode, useCallback, useEffect, useRef, useState,
-} from 'react';
+import { ReactNode } from 'react';
 import { useTheme } from 'app/providers/ThemeProvider';
 import { useModal } from 'shared/lib/hooks/useModal/useModal';
 import { Overlay } from '../Overlay/Overlay';
