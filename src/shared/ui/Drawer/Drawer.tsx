@@ -1,10 +1,10 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-import { useTheme } from 'app/providers/ThemeProvider';
 import {
     memo, ReactNode, useCallback, useEffect,
 } from 'react';
 import { useSpring, config } from '@react-spring/web';
-import { useAnimationLibs } from 'shared/lib/components/AnimationProvider';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { useTheme } from '@/app/providers/ThemeProvider';
+import { useAnimationLibs } from '@/shared/lib/components/AnimationProvider';
 import Portal from '../Portal/Portal';
 import { Overlay } from '../Overlay/Overlay';
 import styles from './Drawer.module.scss';

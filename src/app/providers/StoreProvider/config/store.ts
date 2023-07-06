@@ -1,10 +1,10 @@
 import {
     CombinedState, configureStore, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
-import { userReducer } from 'enteties/User';
-import { $api } from 'shared/api/api';
-import { saveScrollPositionReducer } from 'features/SaveScrollPosition';
-import { rtkApi } from 'shared/api/rtkApi';
+import { userReducer } from '@/entities/User';
+import { $api } from '@/shared/api/api';
+import { saveScrollPositionReducer } from '@/features/SaveScrollPosition';
+import { rtkApi } from '@/shared/api/rtkApi';
 import { StateSchema } from './StateSchema';
 import { createReducerManager } from './reducerManager';
 

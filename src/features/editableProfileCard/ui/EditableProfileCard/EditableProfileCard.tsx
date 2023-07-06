@@ -1,15 +1,15 @@
-import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { ReducersList, useDynamicModuleLoad } from 'shared/lib/hooks/useDynamicModuleLoad/useDynamicModuleLoad';
 import { useSelector } from 'react-redux';
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { Currency } from 'enteties/Currency';
-import { Country } from 'enteties/Country';
-import Text, { TextTheme } from 'shared/ui/Text/Text';
-import { ProfileCard } from 'enteties/Profile';
-import { VStack } from 'shared/ui/Stack';
+import { Currency } from '@/entities/Currency';
+import { Country } from '@/entities/Country';
+import { ProfileCard } from '@/entities/Profile';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { ReducersList, useDynamicModuleLoad } from '@/shared/lib/hooks/useDynamicModuleLoad/useDynamicModuleLoad';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
+import Text, { TextTheme } from '@/shared/ui/Text/Text';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { VStack } from '@/shared/ui/Stack';
 import EditableProfileCardHeader
     from '../EditableProfileCardHeader/EditableProfileCardHeader';
 import { profileActions, profileReducer } from '../../model/slice/profileSlice';

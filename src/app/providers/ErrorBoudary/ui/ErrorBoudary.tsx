@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-undef
 import React, { ErrorInfo, ReactNode, Suspense } from 'react';
-import { PageError } from 'widgets/PageError';
+import { PageError } from '@/widgets/PageError';
 
 interface ErrorBoudaryProps {
   children: ReactNode;

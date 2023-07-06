@@ -1,8 +1,8 @@
-import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
-import PageLayout from 'widgets/PageLayout/PageLayout';
 import { useParams } from 'react-router-dom';
+import PageLayout from '@/widgets/PageLayout/PageLayout';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import styles from './ArticleEditPage.module.scss';
 
 interface ArticleEditPageProps {

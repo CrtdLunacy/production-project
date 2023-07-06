@@ -1,12 +1,12 @@
-import { Dropdown } from 'shared/ui/Popups';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import Avatar from 'shared/ui/Avatar/Avatar';
 import React, { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useDispatch, useSelector } from 'react-redux';
 import {
     getUserAuthData, isUserAdmin, isUserModerator, userActions,
-} from 'enteties/User';
-import { useDispatch, useSelector } from 'react-redux';
+} from '@/entities/User';
+import Avatar from '@/shared/ui/Avatar/Avatar';
+import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import { Dropdown } from '@/shared/ui/Popups';
 import styles from './AvatarDropdown.module.scss';
 
 interface AvatarDropdownProps {

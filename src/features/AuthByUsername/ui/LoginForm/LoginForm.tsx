@@ -1,12 +1,12 @@
-import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import Button, { ButtonTheme } from 'shared/ui/Button/Button';
-import Input from 'shared/ui/Input/Input';
 import { useSelector } from 'react-redux';
 import { memo, useCallback } from 'react';
-import Text, { TextTheme } from 'shared/ui/Text/Text';
-import { ReducersList, useDynamicModuleLoad } from 'shared/lib/hooks/useDynamicModuleLoad/useDynamicModuleLoad';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import Button, { ButtonTheme } from '@/shared/ui/Button/Button';
+import Input from '@/shared/ui/Input/Input';
+import Text, { TextTheme } from '@/shared/ui/Text/Text';
+import { ReducersList, useDynamicModuleLoad } from '@/shared/lib/hooks/useDynamicModuleLoad/useDynamicModuleLoad';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername';
 import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
 import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
@@ -52,7 +52,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
     }, [onSuccess, dispatch, password, username]);
 
     return (
-        <div className={classNames(styles.LoginForm, {}, [className])}>
+        <form className={classNames(styles.LoginForm, {}, [className])}>
             <Text title={t('Форма авторизации')} />
             {error && <Text text={error} theme={TextTheme.ERROR} />}
             <Input
@@ -69,6 +69,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
                 value={password}
             />
             <Button
+                type="submit"
                 className={styles.btnLogin}
                 theme={ButtonTheme.OUTLINE}
                 onClick={handleLogin}
@@ -76,7 +77,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
             >
                 {t('Войти')}
             </Button>
-        </div>
+        </form>
     );
 });
 

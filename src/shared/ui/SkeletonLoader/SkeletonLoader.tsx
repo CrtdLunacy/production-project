@@ -1,5 +1,5 @@
-import { classNames } from 'shared/lib/classNames/classNames';
 import { CSSProperties } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import styles from './SkeletonLoader.module.scss';
 
 interface SkeletonLoaderProps {

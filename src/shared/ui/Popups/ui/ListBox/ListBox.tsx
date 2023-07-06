@@ -1,8 +1,8 @@
 import { Fragment, ReactNode } from 'react';
 import { Listbox as HListBox } from '@headlessui/react';
-import Check from 'shared/assets/icons/checkMark.svg';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { DropdownDirection } from 'shared/types/ui';
+import Check from '@/shared/assets/icons/checkMark.svg';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { DropdownDirection } from '@/shared/types/ui';
 import { mapDirectionClasses } from '../../styles/consts';
 import Icon from '../../../Icon/Icon';
 import { HStack } from '../../../Stack';

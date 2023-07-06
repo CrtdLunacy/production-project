@@ -1,7 +1,7 @@
 import { memo } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import PageLayout from 'widgets/PageLayout/PageLayout';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import PageLayout from '@/widgets/PageLayout/PageLayout';
 
 interface AdminPanelPageProps {
     className?: string;
