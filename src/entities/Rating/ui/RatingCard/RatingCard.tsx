@@ -62,7 +62,7 @@ export const RatingCard = memo((props: RatingProps) => {
             <Input value={feedback} onChange={setFeedback} placeholder={t('Ваш отзыв')} />
             <HStack gap="16" justify="between">
                 <Button onClick={handleAccept} theme={ButtonTheme.OUTLINE}>
-                    {t('Оставить отзыв о статье')}
+                    {t('Оставить отзыв')}
                 </Button>
                 <Button onClick={handleCancel} theme={ButtonTheme.OUTLINE_RED}>
                     {t('Закрыть')}
