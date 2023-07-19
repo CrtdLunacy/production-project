@@ -6,7 +6,7 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDe
 import { NotificationList } from './NotificationList';
 
 export default {
-    title: 'shared/NotificationList',
+    title: 'entities/NotificationList',
     component: NotificationList,
     argTypes: {
         backgroundColor: { control: 'color' },

@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
-import { useNotifications } from '@/entities/Notification/api/notificationApi';
-import { NotificationItem } from '@/entities/Notification/ui/NotificationItem/NotificationItem';
+import { useNotifications } from '../../api/notificationApi';
+import { NotificationItem } from '../NotificationItem/NotificationItem';
 import { VStack } from '@/shared/ui/Stack';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import SkeletonLoader from '@/shared/ui/SkeletonLoader/SkeletonLoader';

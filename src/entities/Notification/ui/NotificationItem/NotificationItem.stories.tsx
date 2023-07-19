@@ -6,19 +6,30 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDe
 import { NotificationItem } from './NotificationItem';
 
 export default {
-    title: 'shared/NotificationItem',
+    title: 'entities/NotificationItem',
     component: NotificationItem,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
 } as ComponentMeta<typeof NotificationItem>;
 
+const item = {
+    id: '1',
+    title: 'Title',
+    description: 'Description Description',
+    url: 'https://http.cat/images/202.jpg',
+};
+
 const Template: ComponentStory<typeof NotificationItem> = (args) => <NotificationItem {...args} />;
 
 export const Light = Template.bind({});
-Light.args = {};
+Light.args = {
+    item,
+};
 Light.decorators = [StoreDecorator({})];
 
 export const Dark = Template.bind({});
-Dark.args = {};
+Dark.args = {
+    item,
+};
 Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];

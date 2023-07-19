@@ -1462,6 +1462,12 @@
       "rate": 3,
       "feedback": "Отлично",
       "id": "PmlMm0f"
+    },
+    {
+      "userId": "3",
+      "articleId": "17",
+      "rate": 4,
+      "id": "WOeC4pK"
     }
   ],
   "profile-ratings": [

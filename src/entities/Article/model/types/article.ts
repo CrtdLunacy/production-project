@@ -1,5 +1,5 @@
 import { User } from '@/entities/User';
-import { ArticleBlockType, ArticleType } from '@/entities/Article';
+import { ArticleBlockType, ArticleType } from '../../../Article';
 
 export interface ArticleBlockBase {
     id: string;

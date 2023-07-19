@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { ProfileCard } from '@/entities/Profile';
+import { ProfileCard } from '../../../Profile';
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';

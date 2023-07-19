@@ -3,7 +3,7 @@ import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { RatingCard } from '@/entities/Rating';
-import { useGetArticleRating, useRateArticle } from '@/features/ArticleRating/api/articleRatingApi';
+import { useGetArticleRating, useRateArticle } from '../../api/articleRatingApi';
 import { getUserAuthData } from '@/entities/User';
 import SkeletonLoader from '@/shared/ui/SkeletonLoader/SkeletonLoader';
 

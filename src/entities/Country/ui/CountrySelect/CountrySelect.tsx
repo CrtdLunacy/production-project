@@ -1,8 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback, useMemo } from 'react';
-import { Currency } from '@/entities/Currency';
-import { Country } from '@/entities/Country/model/types/country';
-import Select from '@/shared/ui/Select/Select';
+import { Country } from '../../model/types/country';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ListBox } from '@/shared/ui/Popups/ui/ListBox/ListBox';
 

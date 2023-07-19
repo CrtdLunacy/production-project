@@ -1,4 +1,4 @@
-import { CommentType } from '@/entities/Comment';
+import { CommentType } from '../../../Comment';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import Avatar from '@/shared/ui/Avatar/Avatar';
 import Text from '@/shared/ui/Text/Text';

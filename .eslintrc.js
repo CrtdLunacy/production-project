@@ -56,7 +56,9 @@ module.exports = {
         'react-hooks/exhaustive-deps': 'error',
         'no-param-reassign': 'off',
         'no-undef': 'off',
-        'lunacy-plugin/path-cheker': 'error',
+        'lunacy-plugin/path-checker': ['error', {
+            alias: '@',
+        }],
     },
     globals: {
         __IS_DEV__: true,

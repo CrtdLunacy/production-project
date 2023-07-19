@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { Profile } from '@/entities/Profile';
+import { Profile } from '../../../Profile';
 import { Currency, CurrencySelect } from '@/entities/Currency';
 import { Country } from '@/entities/Country/model/types/country';
 import { CountrySelect } from '@/entities/Country';
