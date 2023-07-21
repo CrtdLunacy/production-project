@@ -36,7 +36,9 @@ module.exports = {
         'no-unused-vars': 'warn',
         'react/require-default-props': 'off',
         'react/react-in-jsx-scope': 'off',
-        'react/jsx-props-no-spreading': 'warn',
+        'react/jsx-props-no-spreading': ['warn', {
+            custom: 'ignore',
+        }],
         'react/function-component-definition': 'off',
         'no-shadow': 'off',
         'import/extensions': 'off',
@@ -57,6 +59,9 @@ module.exports = {
         'no-param-reassign': 'off',
         'no-undef': 'off',
         'lunacy-plugin/path-checker': ['error', {
+            alias: '@',
+        }],
+        'lunacy-plugin/public-api-imports': ['error', {
             alias: '@',
         }],
     },

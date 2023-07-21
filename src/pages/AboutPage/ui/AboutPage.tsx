@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import PageLayout from '@/widgets/PageLayout/PageLayout';
+import { PageLayout } from '@/widgets/PageLayout';
 
 const AboutPage = memo(() => {
     const { t } = useTranslation();

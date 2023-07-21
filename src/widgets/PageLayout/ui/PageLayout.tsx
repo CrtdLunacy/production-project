@@ -18,7 +18,7 @@ interface PageLayoutProps {
   onScrollEnd?: () => void;
 }
 
-const PageLayout = (props: PageLayoutProps) => {
+export const PageLayout = (props: PageLayoutProps) => {
     const { className, children, onScrollEnd } = props;
     const triggerRef = useRef() as MutableRefObject<HTMLDivElement>;
     const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>;
@@ -56,5 +56,3 @@ const PageLayout = (props: PageLayoutProps) => {
         </main>
     );
 };
-
-export default PageLayout;

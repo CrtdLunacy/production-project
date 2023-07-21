@@ -10,3 +10,4 @@ export {
 } from './model/const/const';
 export { getArticleDetailsData } from './model/selectors/articleDetails';
 export { ArticleList } from './ui/ArticleList/ArticleList';
+export { articleDetailsReducer } from './model/slice/articleDetailsSlice';
