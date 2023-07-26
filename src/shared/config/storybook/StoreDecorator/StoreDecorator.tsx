@@ -1,11 +1,15 @@
-import '@/app/styles/index.scss';
 import { Story } from '@storybook/react';
-import { articleDetailsReducer } from '@/entities/Article';
 import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
-import { loginReducer } from '@/features/AuthByUsername';
-import { profileReducer } from '@/features/editableProfileCard';
 import { ReducersList } from '@/shared/lib/hooks/useDynamicModuleLoad/useDynamicModuleLoad';
+// eslint-disable-next-line lunacy-plugin/layer-imports
+import { loginReducer } from '@/features/AuthByUsername';
+// eslint-disable-next-line lunacy-plugin/layer-imports
+import { profileReducer } from '@/features/editableProfileCard';
+// eslint-disable-next-line lunacy-plugin/layer-imports
+import { articleDetailsReducer } from '@/entities/Article';
+// eslint-disable-next-line lunacy-plugin/layer-imports
 import { addCommentFormReducer } from '@/features/addCommentForm';
+// eslint-disable-next-line lunacy-plugin/layer-imports
 import { articleDetailsPageReducer } from '@/pages/ArcticleDetailsPage';
 
 const defaultAsyncReducers: ReducersList = {

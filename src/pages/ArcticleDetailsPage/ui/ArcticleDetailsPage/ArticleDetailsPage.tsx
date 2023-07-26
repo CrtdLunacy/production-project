@@ -11,6 +11,7 @@ import ArticleDetailsPageHeader from '../ArcticleDetailsPageHeader/ArticleDetail
 import styles from './ArcticleDetailsPage.module.scss';
 import { articleDetailsPageReducer } from '../../model/slices';
 import { ArticleRating } from '@/features/ArticleRating';
+// eslint-disable-next-line lunacy-plugin/layer-imports
 import { NotFoundPage } from '@/pages/NotFoundPage';
 
 interface ArticleDetailsPageProps {

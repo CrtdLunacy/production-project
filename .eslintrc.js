@@ -61,6 +61,10 @@ module.exports = {
         'lunacy-plugin/path-checker': ['error', {
             alias: '@',
         }],
+        'lunacy-plugin/layer-imports': ['error', {
+            alias: '@',
+            ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+        }],
         'lunacy-plugin/public-api-imports': ['error', {
             alias: '@',
         }],
