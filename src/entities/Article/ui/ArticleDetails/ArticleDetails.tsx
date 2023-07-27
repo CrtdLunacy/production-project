@@ -3,12 +3,14 @@ import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ReducersList, useDynamicModuleLoad } from '@/shared/lib/hooks/useDynamicModuleLoad/useDynamicModuleLoad';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import Text, { TextAlign, TextSize, TextTheme } from '@/shared/ui/Text/Text';
-import SkeletonLoader from '@/shared/ui/SkeletonLoader/SkeletonLoader';
-import Avatar from '@/shared/ui/Avatar/Avatar';
+import {
+    Text, TextAlign, TextSize, TextTheme,
+} from '@/shared/ui/Text';
+import { SkeletonLoader } from '@/shared/ui/SkeletonLoader';
+import { Avatar } from '@/shared/ui/Avatar';
 import EyeIcon from '@/shared/assets/icons/eyesight.svg';
 import CalendarIcon from '@/shared/assets/icons/calendar.svg';
-import Icon from '@/shared/ui/Icon/Icon';
+import { Icon } from '@/shared/ui/Icon';
 import { HStack, VStack } from '@/shared/ui/Stack';
 import ArticleTextBlockComponent
     from '../ArticleTextBlockComponent/ArticleTextBlockComponent';

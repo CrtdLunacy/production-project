@@ -7,7 +7,7 @@ interface IconProps extends React.SVGProps<SVGSVGElement>{
   Svg: React.VFC<React.SVGProps<SVGElement>>;
 }
 
-const Icon = (props: IconProps) => {
+export const Icon = (props: IconProps) => {
     const { className, Svg, ...otherProps } = props;
 
     return (
@@ -17,5 +17,3 @@ const Icon = (props: IconProps) => {
         />
     );
 };
-
-export default Icon;

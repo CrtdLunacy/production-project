@@ -1,25 +1,7 @@
 import { FC, memo } from 'react';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import styles from './Text.module.scss';
-
-export enum TextTheme {
-    PRIMARY = 'primary',
-    INVERTED = 'inverted',
-    ERROR = 'error'
-}
-
-export enum TextAlign {
-  RIGHT = 'right',
-  LEFT = 'left',
-  CENTER = 'center',
-}
-
-export enum TextSize {
-  S = 'size_s',
-  M = 'size_m',
-  L = 'size_l',
-  XL = 'size_xl',
-}
+import { TextAlign, TextSize, TextTheme } from './consts';
 
 interface TextProps {
   className?: string;
@@ -40,7 +22,7 @@ const mapSizeToHeaderTag: Record<TextSize, HeaderTagType> = {
     [TextSize.XL]: 'h1',
 };
 
-const Text: FC<TextProps> = memo((props: TextProps) => {
+export const Text: FC<TextProps> = memo((props: TextProps) => {
     const {
         className,
         title,
@@ -79,5 +61,3 @@ const Text: FC<TextProps> = memo((props: TextProps) => {
         </div>
     );
 });
-
-export default Text;

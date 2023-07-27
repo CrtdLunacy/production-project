@@ -1,11 +1,7 @@
 import { HTMLAttributes, ReactNode } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import styles from './Card.module.scss';
-
-export enum CardTheme {
-  NORMAL = 'normal',
-  OUTLINED = 'outlined'
-}
+import { CardTheme } from './consts';
 
 interface CardProps extends HTMLAttributes<HTMLDivElement>{
   className?: string;
@@ -14,7 +10,7 @@ interface CardProps extends HTMLAttributes<HTMLDivElement>{
   max?: boolean;
 }
 
-const Card = (props: CardProps) => {
+export const Card = (props: CardProps) => {
     const {
         className,
         children,
@@ -32,5 +28,3 @@ const Card = (props: CardProps) => {
         </div>
     );
 };
-
-export default Card;

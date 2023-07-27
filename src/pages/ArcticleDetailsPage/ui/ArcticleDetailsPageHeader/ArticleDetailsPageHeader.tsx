@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { getArticleDetailsData } from '@/entities/Article';
-import Button, { ButtonTheme } from '@/shared/ui/Button/Button';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { HStack } from '@/shared/ui/Stack';
 import { getArticleEditAccess } from '../../model/selectors/article';

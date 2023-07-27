@@ -3,10 +3,10 @@ import { Profile } from '../../../Profile';
 import { Currency, CurrencySelect } from '@/entities/Currency';
 import { CountrySelect, Country } from '@/entities/Country';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
-import Text, { TextAlign, TextTheme } from '@/shared/ui/Text/Text';
-import Input from '@/shared/ui/Input/Input';
-import Loader from '@/shared/ui/Loader/Loader';
-import Avatar from '@/shared/ui/Avatar/Avatar';
+import { Text, TextAlign, TextTheme } from '@/shared/ui/Text';
+import { Input } from '@/shared/ui/Input';
+import { Loader } from '@/shared/ui/Loader';
+import { Avatar } from '@/shared/ui/Avatar';
 import { HStack, VStack } from '@/shared/ui/Stack';
 import styles from './ProfileCard.module.scss';
 

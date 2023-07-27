@@ -4,9 +4,9 @@ import Check from '@/shared/assets/icons/checkMark.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DropdownDirection } from '@/shared/types/ui';
 import { mapDirectionClasses } from '../../styles/consts';
-import Icon from '../../../Icon/Icon';
+import { Icon } from '../../../Icon/Icon';
 import { HStack } from '../../../Stack';
-import Button from '../../../Button/Button';
+import { Button } from '../../../Button/Button';
 import styles from './ListBox.module.scss';
 import popupStyles from '../../styles/popup.module.scss';
 

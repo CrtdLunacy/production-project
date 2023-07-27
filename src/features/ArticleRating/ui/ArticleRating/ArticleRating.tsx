@@ -5,7 +5,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { RatingCard } from '@/entities/Rating';
 import { useGetArticleRating, useRateArticle } from '../../api/articleRatingApi';
 import { getUserAuthData } from '@/entities/User';
-import SkeletonLoader from '@/shared/ui/SkeletonLoader/SkeletonLoader';
+import { SkeletonLoader } from '@/shared/ui/SkeletonLoader';
 
 export interface ArticleRatingProps {
     className?: string;

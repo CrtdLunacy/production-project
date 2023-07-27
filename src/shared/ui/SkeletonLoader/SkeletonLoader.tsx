@@ -9,7 +9,7 @@ interface SkeletonLoaderProps {
   border?: string;
 }
 
-const SkeletonLoader = (props: SkeletonLoaderProps) => {
+export const SkeletonLoader = (props: SkeletonLoaderProps) => {
     const {
         className,
         height,
@@ -30,5 +30,3 @@ const SkeletonLoader = (props: SkeletonLoaderProps) => {
         />
     );
 };
-
-export default SkeletonLoader;

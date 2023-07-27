@@ -5,7 +5,7 @@ interface LoaderProps {
   className?: string
 }
 
-const Loader = ({ className }: LoaderProps) => (
+export const Loader = ({ className }: LoaderProps) => (
     <div className={classNames(
         'loadingio-spinner-ellipsis-uw59fjnr19',
         {},
@@ -21,5 +21,3 @@ const Loader = ({ className }: LoaderProps) => (
         </div>
     </div>
 );
-
-export default Loader;

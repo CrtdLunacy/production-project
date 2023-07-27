@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import Avatar from './Avatar';
+import { Avatar } from './Avatar';
 import AvatarImg from '../../assets/tests/storyybook.jpg';
 import { Theme } from '@/shared/const/theme';
 

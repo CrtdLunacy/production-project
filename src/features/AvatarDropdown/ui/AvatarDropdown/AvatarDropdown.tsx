@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
     getUserAuthData, isUserAdmin, isUserModerator, userActions,
 } from '@/entities/User';
-import Avatar from '@/shared/ui/Avatar/Avatar';
+import { Avatar } from '@/shared/ui/Avatar';
 import { Dropdown } from '@/shared/ui/Popups';
 import styles from './AvatarDropdown.module.scss';
 import { RoutePath } from '@/shared/const/router';

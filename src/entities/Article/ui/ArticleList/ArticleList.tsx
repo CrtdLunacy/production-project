@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { HTMLAttributeAnchorTarget } from 'react';
 import ArticleListItem from '../ArticleListItem/ArticleListItem';
 import ArticleListItemSkeleton from '../ArticleListItem/ArticleListItemSkeleton';
-import Text from '@/shared/ui/Text/Text';
+import { Text } from '@/shared/ui/Text';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Article } from '../../model/types/article';
 import styles from './ArticleList.module.scss';

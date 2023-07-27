@@ -16,7 +16,7 @@ interface SelectProps<T extends string> {
   readonly?: boolean;
 }
 
-const Select = <T extends string>(props: SelectProps<T>) => {
+export const Select = <T extends string>(props: SelectProps<T>) => {
     const {
         className, label, options, value, onChange, readonly,
     } = props;
@@ -54,5 +54,3 @@ const Select = <T extends string>(props: SelectProps<T>) => {
         </div>
     );
 };
-
-export default Select;

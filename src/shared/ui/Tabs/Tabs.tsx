@@ -1,11 +1,11 @@
 import { memo, ReactNode, useCallback } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import Card, { CardTheme } from '../Card/Card';
+import { Card, CardTheme } from '../Card';
 import styles from './Tabs.module.scss';
 
 export interface TabItem {
-  value: string;
-content: ReactNode;
+    value: string;
+    content: ReactNode;
 }
 interface TabsProps {
   className?: string;
@@ -14,7 +14,7 @@ interface TabsProps {
   onTabClick: (tab: TabItem) => void;
 }
 
-const Tabs = memo((props: TabsProps) => {
+export const Tabs = memo((props: TabsProps) => {
     const {
         className, tabs, onTabClick, value,
     } = props;
@@ -38,5 +38,3 @@ const Tabs = memo((props: TabsProps) => {
         </div>
     );
 });
-
-export default Tabs;

@@ -23,4 +23,4 @@ files.forEach((srcFile) => {
     });
 });
 
-project.save();
+project.save().then(() => console.log('Done!'));
