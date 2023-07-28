@@ -23,6 +23,7 @@ module.exports = {
         'i18next',
         'react-hooks',
         'lunacy-plugin',
+        'unused-imports',
     ],
     rules: {
         'react/jsx-indent': [2, 4],
@@ -68,6 +69,7 @@ module.exports = {
         'lunacy-plugin/public-api-imports': ['error', {
             alias: '@',
         }],
+        'unused-imports/no-unused-imports': 'error',
     },
     globals: {
         __IS_DEV__: true,

@@ -1,5 +1,5 @@
 import {
-    MutableRefObject, ReactNode, UIEvent, UIEventHandler, useRef,
+    MutableRefObject, ReactNode, UIEvent, useRef,
 } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
