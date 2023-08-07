@@ -1,4 +1,5 @@
 export { ArticleDetails } from './ui/ArticleDetails/ArticleDetails';
+export { ArticleThemes } from './ui/ArticleThemes/ArticleThemes';
 export type {
     Article, ArticleDetailsSchema,
 } from './model/types/article';

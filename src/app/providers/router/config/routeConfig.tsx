@@ -10,6 +10,7 @@ import { AdminPanelPage } from '@/pages/AdminPanelPage';
 import { ForbiddenPage } from '@/pages/ForbiddenPage';
 import { AppRoutes, RoutePath } from '@/shared/const/router';
 import { AppRouteProps } from '@/shared/types/router';
+import { ArticleCreatePage } from '@/pages/ArticleCreatePage';
 
 export const routeConfig: Record<AppRoutes, AppRouteProps> = {
     [AppRoutes.MAIN]: {
@@ -37,7 +38,7 @@ export const routeConfig: Record<AppRoutes, AppRouteProps> = {
     },
     [AppRoutes.ARTICLE_CREATE]: {
         path: `${RoutePath.article_create}`,
-        element: <ArticleEditPage />,
+        element: <ArticleCreatePage />,
         authOnly: true,
     },
     [AppRoutes.ARTICLE_EDIT]: {

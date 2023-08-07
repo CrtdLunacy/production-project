@@ -11,6 +11,7 @@ import { SaveScrollPositionSchema } from '@/features/SaveScrollPosition';
 import { ArticleDetailsPageSchema } from '@/pages/ArcticleDetailsPage';
 import { rtkApi } from '@/shared/api/rtkApi';
 import { EditableProfileCardSchema } from '@/features/editableProfileCard';
+import { ArticleCreationSchema } from '@/pages/ArticleCreatePage';
 
 export interface StateSchema {
     user: UserSchema;
@@ -24,6 +25,7 @@ export interface StateSchema {
     addCommentForm?: addCommentFormSchema;
     articlesPage?: ArticlePageSchema;
     articleDetailsPage?: ArticleDetailsPageSchema;
+    articleCreatePage?: ArticleCreationSchema;
 
 }
 export type StateSchemaKey = keyof StateSchema;
