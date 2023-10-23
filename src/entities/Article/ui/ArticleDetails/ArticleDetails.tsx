@@ -12,11 +12,11 @@ import EyeIcon from '@/shared/assets/icons/eyesight.svg';
 import CalendarIcon from '@/shared/assets/icons/calendar.svg';
 import { Icon } from '@/shared/ui/Icon';
 import { HStack, VStack } from '@/shared/ui/Stack';
-import ArticleTextBlockComponent
+import { ArticleTextBlockComponent }
     from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
-import ArticleImageBlockComponent
+import { ArticleImageBlockComponent }
     from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
-import ArticleCodeBlockComponent
+import { ArticleCodeBlockComponent }
     from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import { ArticleBlock } from '../../model/types/article';
 import {

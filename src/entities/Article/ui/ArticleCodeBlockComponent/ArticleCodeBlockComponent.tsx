@@ -9,7 +9,7 @@ interface ArticleCodeBlockComponentProps {
   block: ArticleCodeBlock;
 }
 
-const ArticleCodeBlockComponent = memo((props: ArticleCodeBlockComponentProps) => {
+export const ArticleCodeBlockComponent = memo((props: ArticleCodeBlockComponentProps) => {
     const { className, block } = props;
 
     return (
@@ -18,5 +18,3 @@ const ArticleCodeBlockComponent = memo((props: ArticleCodeBlockComponentProps) =
         </div>
     );
 });
-
-export default ArticleCodeBlockComponent;

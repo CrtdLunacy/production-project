@@ -1,10 +1,17 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Article } from '@/entities/Article';
-import { createArticle } from '../services/createArticle';
+import { ArticleBlock, ArticleType } from '@/entities/Article';
 import { ArticleCreationSchema } from '../types/articleCreationSchema';
 
 const initialState: ArticleCreationSchema = {
-    data: undefined,
+    id: '',
+    title: '',
+    subtitle: '',
+    img: '',
+    views: 0,
+    createdAt: '',
+    selectedType: ArticleType.MEDICINE,
+    type: [],
+    blocks: [],
     isLoading: false,
     error: undefined,
 };
@@ -12,31 +19,29 @@ export const createPageSlice = createSlice({
     name: 'article',
     initialState,
     reducers: {
-        createArticle: (state, action: PayloadAction<Article>) => {
-            state.data = {
-                ...state.data,
-                ...action.payload,
-            };
+        setId: (state, action: PayloadAction<string>) => {
+            state.id = action.payload;
+        },
+        setTitle: (state, action: PayloadAction<string>) => {
+            state.title = action.payload;
+        },
+        setSubtitle: (state, action: PayloadAction<string>) => {
+            state.subtitle = action.payload;
+        },
+        setImgUrl: (state, action: PayloadAction<string>) => {
+            state.img = action.payload;
+        },
+        setSelectedType: (state, action: PayloadAction<ArticleType>) => {
+            state.selectedType = action.payload;
+        },
+        setType: (state, action: PayloadAction<ArticleType>) => {
+            state.type = [...state.type, action.payload];
+        },
+        setBlock: (state, action: PayloadAction<ArticleBlock>) => {
+            state.blocks = [...state.blocks, action.payload];
         },
     },
-    extraReducers: (builder) => {
-        builder
-            .addCase(createArticle.pending, (state) => {
-                state.error = undefined;
-                state.isLoading = true;
-            })
-            .addCase(createArticle.fulfilled, (
-                state,
-                action: PayloadAction<Article>,
-            ) => {
-                state.isLoading = false;
-                state.data = action.payload;
-            })
-            .addCase(createArticle.rejected, (state, action) => {
-                state.isLoading = false;
-                state.error = action.payload as string;
-            });
-    },
+    extraReducers: (builder) => {},
 });
 
 export const { actions: createPageActions } = createPageSlice;
